@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blinko 设置</title>
+  <link rel="stylesheet" href="styles/settings.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 data-i18n="settings_title">⚙️ Blinko 设置</h1>
+    </header>
+
+    <!-- Tab导航 -->
+    <nav class="tabs">
+      <button class="tab-button active" data-tab="blinko" data-i18n="settings_tab_blinko">Blinko配置</button>
+      <button class="tab-button" data-tab="openai" data-i18n="settings_tab_openai">OpenAI配置</button>
+      <button class="tab-button" data-tab="templates" data-i18n="settings_tab_templates">模板管理</button>
+      <button class="tab-button" data-tab="tags" data-i18n="settings_tab_tags">标签配置</button>
+      <button class="tab-button" data-tab="storage" data-i18n="settings_tab_storage">存储配置</button>
+      <button class="tab-button" data-tab="general" data-i18n="settings_tab_general">通用设置</button>
+    </nav>
+
+    <!-- Tab 1: Blinko配置 -->
+    <div class="tab-content active" id="blinko-tab">
+      <h2 data-i18n="settings_blinko_title">Blinko 服务配置</h2>
+      
+      <div class="form-group">
+        <label for="blinko-api-url" data-i18n="settings_blinko_apiUrl">API URL</label>
+        <input type="url" id="blinko-api-url" data-i18n-placeholder="settings_blinko_apiUrl_placeholder" placeholder="https://your-blinko-server.com">
+        <small data-i18n="settings_blinko_apiUrl_hint">您的Blinko服务地址</small>
+      </div>
+
+      <div class="form-group">
+        <label for="blinko-auth" data-i18n="settings_blinko_auth">Authorization Token</label>
+        <input type="password" id="blinko-auth" data-i18n-placeholder="settings_blinko_auth_placeholder" placeholder="Bearer token">
+        <small data-i18n="settings_blinko_auth_hint">Blinko的访问令牌</small>
+      </div>
+
+      <button class="btn btn-primary" id="validate-blinko" data-i18n="common_btn_validate">验证连接</button>
+      <div class="status-message" id="blinko-status"></div>
+    </div>
+
+    <!-- Tab 2: OpenAI配置 -->
+    <div class="tab-content" id="openai-tab">
+      <h2 data-i18n="settings_openai_title">OpenAI 服务配置</h2>
+      
+      <div class="form-group">
+        <label for="openai-base-url" data-i18n="settings_openai_baseUrl">Base URL</label>
+        <input type="url" id="openai-base-url" data-i18n-placeholder="settings_openai_baseUrl_placeholder" placeholder="https://api.openai.com/v1">
+        <small data-i18n="settings_openai_baseUrl_hint">API基础URL（留空使用默认）</small>
+      </div>
+
+      <div class="form-group">
+        <label for="openai-key" data-i18n="settings_openai_apiKey">API Key</label>
+        <input type="password" id="openai-key" data-i18n-placeholder="settings_openai_apiKey_placeholder" placeholder="sk-...">
+        <small data-i18n="settings_openai_apiKey_hint">OpenAI API密钥</small>
+      </div>
+
+      <div class="form-group">
+        <label for="openai-model" data-i18n="settings_openai_model">Model</label>
+        <input type="text" id="openai-model" data-i18n-placeholder="settings_openai_model_placeholder" placeholder="gpt-3.5-turbo">
+        <small data-i18n="settings_openai_model_hint">使用的模型名称（留空使用默认）</small>
+      </div>
+
+      <button class="btn btn-primary" id="validate-openai" data-i18n="common_btn_validate">验证连接</button>
+      <div class="status-message" id="openai-status"></div>
+    </div>
+
+    <!-- Tab 3: 模板管理 -->
+    <div class="tab-content" id="templates-tab">
+      <h2 data-i18n="settings_templates_title">提示词模板管理</h2>
+      
+      <div class="form-section">
+        <h3 data-i18n="settings_templates_defaultSection">默认模板</h3>
+        <div class="form-group">
+          <label for="default-template" data-i18n="settings_templates_defaultLabel">选择默认模板</label>
+          <select id="default-template">
+            <option value="" data-i18n="common_selectPlaceholder">请选择...</option>
+          </select>
+          <small data-i18n="settings_templates_defaultHint">在没有域名规则匹配时使用此模板</small>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 data-i18n="settings_templates_listSection">模板列表</h3>
+        <div class="form-group">
+          <label for="template-selector" data-i18n="settings_templates_currentLabel">当前模板</label>
+          <select id="template-selector">
+            <option value="" data-i18n="common_selectPlaceholder">请选择...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="template-content" data-i18n="settings_templates_contentLabel">模板内容</label>
+          <textarea id="template-content" rows="10" data-i18n-placeholder="settings_templates_contentPlaceholder" placeholder="输入system prompt模板...&#10;例如：我是一个专业的内容分析师，擅长提取网页核心信息..."></textarea>
+          <small data-i18n="settings_templates_contentHint">提示：模板将作为system prompt使用，网页内容会自动作为用户消息发送。点击"AI优化"可自动优化为专业模板</small>
+        </div>
+
+        <div class="button-group">
+          <button class="btn btn-primary" id="optimize-template" data-i18n="settings_templates_btnOptimize">AI优化</button>
+          <button class="btn btn-primary" id="save-template" data-i18n="settings_templates_btnSave">保存模板</button>
+          <button class="btn btn-danger" id="delete-template" data-i18n="settings_templates_btnDelete">删除模板</button>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 data-i18n="settings_templates_newSection">新增模板</h3>
+        <div class="form-group">
+          <label for="new-template-name" data-i18n="settings_templates_newName">模板名称</label>
+          <input type="text" id="new-template-name" data-i18n-placeholder="settings_templates_newPlaceholder" placeholder="输入新模板名称">
+        </div>
+        <button class="btn btn-secondary" id="add-template" data-i18n="settings_templates_btnAdd">添加模板</button>
+      </div>
+
+      <div class="form-section">
+        <h3 data-i18n="settings_templates_domainSection">域名特定规则</h3>
+        <div class="form-group">
+          <label for="domain-pattern" data-i18n="settings_templates_domainPattern">域名规则</label>
+          <input type="text" id="domain-pattern" data-i18n-placeholder="settings_templates_domainPatternPlaceholder" placeholder="example.com 或 ^https://github\.com/.*">
+          <small data-i18n="settings_templates_domainPatternHint">支持主域名、完整URL或正则表达式</small>
+        </div>
+
+        <div class="form-group">
+          <label for="domain-rule-type" data-i18n="settings_templates_domainType">规则类型</label>
+          <select id="domain-rule-type">
+            <option value="domain" data-i18n="settings_templates_domainType_domain">主域名匹配</option>
+            <option value="regex" data-i18n="settings_templates_domainType_regex">正则表达式</option>
+            <option value="exact" data-i18n="settings_templates_domainType_exact">完整URL</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="domain-template" data-i18n="settings_templates_domainTemplate">对应模板</label>
+          <select id="domain-template">
+            <option value="" data-i18n="common_selectPlaceholder">请选择...</option>
+          </select>
+        </div>
+
+        <button class="btn btn-secondary" id="add-domain-rule" data-i18n="settings_templates_btnAddRule">添加规则</button>
+
+        <div class="form-group">
+          <label data-i18n="settings_templates_rulesList">已配置的规则</label>
+          <div id="domain-rules-list" class="rules-list">
+            <!-- 动态填充 -->
+          </div>
+        </div>
+      </div>
+
+      <div class="status-message" id="template-status"></div>
+    </div>
+
+    <!-- Tab 4: 标签配置 -->
+    <div class="tab-content" id="tags-tab">
+      <h2 data-i18n="settings_tags_title">场景标签配置</h2>
+      
+      <div class="form-group">
+        <label for="tag-summary" data-i18n="settings_tags_summary">总结场景标签</label>
+        <input type="text" id="tag-summary" data-i18n-placeholder="settings_tags_summaryPlaceholder" placeholder="#网页/总结">
+        <small data-i18n="settings_tags_summaryHint">AI总结时自动添加的标签</small>
+      </div>
+
+      <div class="form-group">
+        <label for="tag-selection" data-i18n="settings_tags_selection">划词场景标签</label>
+        <input type="text" id="tag-selection" data-i18n-placeholder="settings_tags_selectionPlaceholder" placeholder="#网页/划词">
+        <small data-i18n="settings_tags_selectionHint">划词保存时自动添加的标签</small>
+      </div>
+
+      <div class="form-group">
+        <label for="tag-image" data-i18n="settings_tags_image">图片场景标签</label>
+        <input type="text" id="tag-image" data-i18n-placeholder="settings_tags_imagePlaceholder" placeholder="#网页/图片">
+        <small data-i18n="settings_tags_imageHint">保存图片时自动添加的标签</small>
+      </div>
+
+      <div class="form-group">
+        <label for="tag-clipping" data-i18n="settings_tags_clipping">网页剪藏场景标签</label>
+        <input type="text" id="tag-clipping" data-i18n-placeholder="settings_tags_clippingPlaceholder" placeholder="#网页/剪藏">
+        <small data-i18n="settings_tags_clippingHint">网页剪藏时自动添加的标签</small>
+      </div>
+
+      <hr style="margin: 30px 0; border: none; border-top: 1px solid #e0e0e0;">
+
+      <h3 data-i18n="settings_tags_domainTitle">域名特定标签</h3>
+      <p data-i18n="settings_tags_domainDesc" style="color: #666; margin-bottom: 20px;">为不同域名/网站设置专属标签，自动应用于所有场景（剪藏、总结、划词、图片）</p>
+
+      <div class="form-group">
+        <label data-i18n="settings_tags_domainAddLabel">添加域名标签规则</label>
+        
+        <div style="display: grid; gap: 12px;">
+          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 10px;">
+            <div>
+              <label style="display: block; font-size: 12px; color: #666; margin-bottom: 4px;" data-i18n="settings_tags_domainPattern">域名模式</label>
+              <input type="text" id="domain-tag-pattern" data-i18n-placeholder="settings_tags_domainPatternPlaceholder" placeholder="例如: github.com" style="width: 100%;">
+            </div>
+            <div>
+              <label style="display: block; font-size: 12px; color: #666; margin-bottom: 4px;" data-i18n="settings_tags_domainType">匹配类型</label>
+              <select id="domain-tag-type" style="width: 100%;">
+                <option value="domain" data-i18n="settings_tags_domainType_domain">主域名</option>
+                <option value="regex" data-i18n="settings_tags_domainType_regex">正则表达式</option>
+                <option value="exact" data-i18n="settings_tags_domainType_exact">完整URL</option>
+              </select>
+            </div>
+          </div>
+          
+          <div style="display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: end;">
+            <div>
+              <label style="display: block; font-size: 12px; color: #666; margin-bottom: 4px;" data-i18n="settings_tags_domainTags">标签</label>
+              <input type="text" id="domain-tag-tags" data-i18n-placeholder="settings_tags_domainTagsPlaceholder" placeholder="标签 (例如: #开发 #技术)" style="width: 100%;">
+            </div>
+            <button id="add-domain-tag-rule" data-i18n="settings_tags_btnAddRule" style="padding: 8px 24px; height: 36px; white-space: nowrap;">添加规则</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="domain-tag-rules-list" style="margin-bottom: 20px;"></div>
+
+      <details style="margin-bottom: 20px;">
+        <summary style="cursor: pointer; user-select: none; padding: 10px; background: #f5f5f5; border-radius: 4px;" data-i18n="settings_tags_advancedOptions">高级选项</summary>
+        <div style="padding: 15px; border: 1px solid #e0e0e0; border-top: none; border-radius: 0 0 4px 4px;">
+          <div class="form-group">
+            <label for="domain-tag-match-strategy" data-i18n="settings_tags_matchStrategy">多规则匹配策略</label>
+            <select id="domain-tag-match-strategy">
+              <option value="first" data-i18n="settings_tags_matchStrategy_first">仅使用第一个匹配的规则</option>
+              <option value="merge" data-i18n="settings_tags_matchStrategy_merge">合并所有匹配规则的标签</option>
+            </select>
+            <small data-i18n="settings_tags_matchStrategyHint">当URL匹配多个规则时的处理方式</small>
+          </div>
+        </div>
+      </details>
+
+      <div class="status-message" id="tag-status"></div>
+    </div>
+
+    <!-- Tab 5: 存储配置 -->
+    <div class="tab-content" id="storage-tab">
+      <h2 data-i18n="settings_storage_title">图片存储配置</h2>
+      
+      <div class="form-group">
+        <label for="keep-original-link" data-i18n="settings_storage_keepOriginal">是否保留图片原链接</label>
+        <select id="keep-original-link">
+          <option value="true" data-i18n="settings_storage_keepOriginal_yes">是</option>
+          <option value="false" data-i18n="settings_storage_keepOriginal_no">否（上传到S3）</option>
+        </select>
+      </div>
+
+      <div id="s3-config" class="form-section" style="display: none;">
+        <h3 data-i18n="settings_storage_s3Title">S3 存储配置</h3>
+        
+        <div class="form-group">
+          <label for="s3-access-key" data-i18n="settings_storage_s3AccessKey">ACCESS_KEY</label>
+          <input type="text" id="s3-access-key" data-i18n-placeholder="settings_storage_s3AccessKeyPlaceholder" placeholder="访问密钥">
+        </div>
+
+        <div class="form-group">
+          <label for="s3-secret-key" data-i18n="settings_storage_s3SecretKey">SECRET_KEY</label>
+          <input type="password" id="s3-secret-key" data-i18n-placeholder="settings_storage_s3SecretKeyPlaceholder" placeholder="私密密钥">
+        </div>
+
+        <div class="form-group">
+          <label for="s3-endpoint" data-i18n="settings_storage_s3Endpoint">ENDPOINT</label>
+          <input type="url" id="s3-endpoint" data-i18n-placeholder="settings_storage_s3EndpointPlaceholder" placeholder="https://s3.amazonaws.com">
+        </div>
+
+        <div class="form-group">
+          <label for="s3-region" data-i18n="settings_storage_s3Region">REGION</label>
+          <input type="text" id="s3-region" data-i18n-placeholder="settings_storage_s3RegionPlaceholder" placeholder="us-east-1">
+        </div>
+
+        <div class="form-group">
+          <label for="s3-bucket" data-i18n="settings_storage_s3Bucket">BUCKET</label>
+          <input type="text" id="s3-bucket" data-i18n-placeholder="settings_storage_s3BucketPlaceholder" placeholder="my-bucket">
+        </div>
+
+        <div class="form-group">
+          <label for="s3-cdn" data-i18n="settings_storage_s3Cdn">CDN（可选）</label>
+          <input type="url" id="s3-cdn" data-i18n-placeholder="settings_storage_s3CdnPlaceholder" placeholder="https://cdn.example.com">
+          <small data-i18n="settings_storage_s3CdnHint">使用CDN加速访问</small>
+        </div>
+
+        <div class="form-group">
+          <label for="s3-custom-path" data-i18n="settings_storage_s3CustomPath">自定义路径（可选）</label>
+          <input type="text" id="s3-custom-path" data-i18n-placeholder="settings_storage_s3CustomPathPlaceholder" placeholder="blinko/images">
+          <small data-i18n="settings_storage_s3CustomPathHint">存储路径前缀</small>
+        </div>
+
+        <div class="form-group">
+          <label for="s3-acl" data-i18n="settings_storage_s3Acl">图片访问控制</label>
+          <select id="s3-acl">
+            <option value="public" data-i18n="settings_storage_s3Acl_public">公开访问（推荐）</option>
+            <option value="private" data-i18n="settings_storage_s3Acl_private">私密访问</option>
+          </select>
+          <small data-i18n="settings_storage_s3AclHint">公开: 图片URL永久有效；私密: 需要授权访问，URL会过期</small>
+        </div>
+
+        <div class="form-group" id="s3-presigned-expiry-group" style="display: none;">
+          <label for="s3-presigned-expiry" data-i18n="settings_storage_s3PresignedExpiry">预签名URL有效期</label>
+          <select id="s3-presigned-expiry">
+            <option value="30" data-i18n="settings_storage_s3Expiry_30">1个月</option>
+            <option value="180" data-i18n="settings_storage_s3Expiry_180">6个月</option>
+            <option value="365" data-i18n="settings_storage_s3Expiry_365">1年</option>
+            <option value="1825" data-i18n="settings_storage_s3Expiry_1825">5年</option>
+            <option value="3650" data-i18n="settings_storage_s3Expiry_3650" selected>10年（推荐）</option>
+          </select>
+          <small data-i18n="settings_storage_s3ExpiryHint">⚠️ 超过有效期后图片链接会失效，建议选择较长期限</small>
+        </div>
+
+        <button class="btn btn-primary" id="validate-s3" data-i18n="settings_storage_btnValidate">验证S3配置</button>
+      </div>
+
+      <div class="status-message" id="storage-status"></div>
+    </div>
+
+    <!-- Tab 6: 通用设置 -->
+    <div class="tab-content" id="general-tab">
+      <h2 data-i18n="settings_general_title">通用设置</h2>
+      
+      <div class="form-section">
+        <h3 data-i18n="settings_general_linkSection">网页链接选项</h3>
+        
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" id="link-summary">
+            <span data-i18n="settings_general_linkSummary">总结时是否携带网页链接</span>
+          </label>
+        </div>
+
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" id="link-selection">
+            <span data-i18n="settings_general_linkSelection">划词保存时是否包含网页链接</span>
+          </label>
+        </div>
+
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" id="link-image">
+            <span data-i18n="settings_general_linkImage">图片保存时是否包含网页链接</span>
+          </label>
+        </div>
+
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" id="link-quick-note">
+            <span data-i18n="settings_general_linkQuickNote">速写时包含网页链接</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 data-i18n="settings_general_lazyLoadSection">懒加载触发设置</h3>
+        
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" id="enable-lazy-load-trigger">
+            <span data-i18n="settings_general_lazyLoadEnable">启用懒加载触发</span>
+          </label>
+          <small data-i18n="settings_general_lazyLoadHint">提取网页正文前，自动滚动页面触发懒加载图片。页面会自动滚动，完成后会恢复位置。</small>
+        </div>
+
+        <div class="form-group">
+          <label for="lazy-load-scroll-speed" data-i18n="settings_general_lazyLoadSpeed">滚动速度</label>
+          <select id="lazy-load-scroll-speed">
+            <option value="fast" data-i18n="settings_general_lazyLoadSpeed_fast">快（约3-5秒）</option>
+            <option value="medium" data-i18n="settings_general_lazyLoadSpeed_medium">中（约5-8秒，推荐）</option>
+            <option value="slow" data-i18n="settings_general_lazyLoadSpeed_slow">慢（约8-12秒）</option>
+          </select>
+          <small data-i18n="settings_general_lazyLoadSpeedHint">更慢的速度可以确保更多图片被触发加载</small>
+        </div>
+
+        <div class="form-group">
+          <label for="lazy-load-max-wait" data-i18n="settings_general_lazyLoadMaxWait">最大等待时间</label>
+          <select id="lazy-load-max-wait">
+            <option value="5" data-i18n="settings_general_lazyLoadMaxWait_5">5秒</option>
+            <option value="10" data-i18n="settings_general_lazyLoadMaxWait_10">10秒（推荐）</option>
+            <option value="15" data-i18n="settings_general_lazyLoadMaxWait_15">15秒</option>
+          </select>
+          <small data-i18n="settings_general_lazyLoadMaxWaitHint">超过此时间后自动停止滚动触发</small>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 data-i18n="settings_general_languageSection">语言设置</h3>
+        
+        <div class="form-group">
+          <label for="interface-language" data-i18n="settings_general_language">界面语言</label>
+          <select id="interface-language">
+            <option value="auto" data-i18n="settings_general_language_auto">自动（跟随浏览器）</option>
+            <option value="zh_CN" data-i18n="settings_general_language_zhCN">中文（简体）</option>
+            <option value="en" data-i18n="settings_general_language_en">English</option>
+          </select>
+          <small data-i18n="settings_general_languageHint">切换语言后需要刷新页面</small>
+        </div>
+
+        <button class="btn btn-secondary" id="refresh-page" data-i18n="settings_general_btnRefresh" style="display: none;">立即刷新</button>
+      </div>
+
+      <div class="form-section">
+        <h3 data-i18n="settings_general_configSection">配置管理</h3>
+        
+        <div class="button-group">
+          <button class="btn btn-secondary" id="export-config" data-i18n="common_btn_export">导出配置</button>
+          <label for="import-file" class="btn btn-secondary">
+            <span data-i18n="common_btn_import">导入配置</span>
+            <input type="file" id="import-file" accept=".json" style="display: none;">
+          </label>
+        </div>
+      </div>
+
+      <div class="status-message" id="general-status"></div>
+    </div>
+  </div>
+
+  <script type="module" src="settings.js"></script>
+</body>
+</html>
+

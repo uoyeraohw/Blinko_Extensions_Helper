@@ -1,0 +1,1432 @@
+{
+  "extName": {
+    "message": "Blinko 网页剪藏助手",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "一款专为Blinko设计的浏览器扩展，支持网页剪藏、AI智能总结和快速笔记功能",
+    "description": "Extension description"
+  },
+  
+  "popup_tab_clipping": {
+    "message": "剪藏",
+    "description": "Clipping tab label"
+  },
+  "popup_tab_quickNote": {
+    "message": "速写",
+    "description": "Quick note tab label"
+  },
+  "popup_tab_settings": {
+    "message": "设置",
+    "description": "Settings tab label"
+  },
+  
+  "popup_clipping_btnExtract": {
+    "message": "提取网页正文",
+    "description": "Extract content button"
+  },
+  "popup_clipping_btnSummarize": {
+    "message": "提取并总结",
+    "description": "Extract and summarize button"
+  },
+  "popup_clipping_labelPreview": {
+    "message": "预览",
+    "description": "Preview label"
+  },
+  "popup_clipping_placeholderPreview": {
+    "message": "提取的内容将显示在这里...",
+    "description": "Preview textarea placeholder"
+  },
+  "popup_clipping_labelType": {
+    "message": "类型",
+    "description": "Type label"
+  },
+  "popup_type_flash": {
+    "message": "闪念",
+    "description": "Flash type option"
+  },
+  "popup_type_note": {
+    "message": "笔记",
+    "description": "Note type option"
+  },
+  "popup_type_reminder": {
+    "message": "提醒",
+    "description": "Reminder type option"
+  },
+  
+  "popup_quickNote_labelContent": {
+    "message": "内容",
+    "description": "Content label for quick note"
+  },
+  "popup_quickNote_placeholder": {
+    "message": "快速记录想法...",
+    "description": "Quick note textarea placeholder"
+  },
+  
+  "common_btn_clear": {
+    "message": "清空",
+    "description": "Clear button"
+  },
+  "common_btn_submit": {
+    "message": "提交",
+    "description": "Submit button"
+  },
+  "common_btn_save": {
+    "message": "保存",
+    "description": "Save button"
+  },
+  "common_btn_delete": {
+    "message": "删除",
+    "description": "Delete button"
+  },
+  "common_btn_cancel": {
+    "message": "取消",
+    "description": "Cancel button"
+  },
+  "common_btn_validate": {
+    "message": "验证连接",
+    "description": "Validate connection button"
+  },
+  "common_btn_add": {
+    "message": "添加",
+    "description": "Add button"
+  },
+  "common_btn_export": {
+    "message": "导出配置",
+    "description": "Export config button"
+  },
+  "common_btn_import": {
+    "message": "导入配置",
+    "description": "Import config button"
+  },
+  
+  "status_loading_processing": {
+    "message": "处理中...",
+    "description": "Generic processing message"
+  },
+  "status_loading_extracting": {
+    "message": "正在提取网页内容...",
+    "description": "Extracting content message"
+  },
+  "status_loading_summarizing": {
+    "message": "正在使用AI总结内容...",
+    "description": "Summarizing content message"
+  },
+  "status_loading_saving": {
+    "message": "正在保存到Blinko...",
+    "description": "Saving to Blinko message"
+  },
+  "status_loading_processingImages": {
+    "message": "正在处理图片 ($CURRENT$/$TOTAL$)...",
+    "description": "Processing images message",
+    "placeholders": {
+      "current": {"content": "$1"},
+      "total": {"content": "$2"}
+    }
+  },
+  "status_loading_lazyLoad": {
+    "message": "正在触发懒加载图片...",
+    "description": "Triggering lazy load message"
+  },
+  "status_loading_validating": {
+    "message": "正在验证连接...",
+    "description": "Validating connection message"
+  },
+  
+  "status_success_extracted": {
+    "message": "网页正文提取成功",
+    "description": "Content extracted successfully"
+  },
+  "status_success_summarized": {
+    "message": "总结完成",
+    "description": "Summary completed"
+  },
+  "status_success_saved": {
+    "message": "保存成功！",
+    "description": "Saved successfully"
+  },
+  "status_success_quickNoteSaved": {
+    "message": "速写已保存！",
+    "description": "Quick note saved"
+  },
+  "status_success_cleared": {
+    "message": "已清空",
+    "description": "Cleared"
+  },
+  "status_success_settingsSaved": {
+    "message": "设置已保存",
+    "description": "Settings saved"
+  },
+  "status_success_connected": {
+    "message": "连接成功",
+    "description": "Connected successfully"
+  },
+  "status_success_templateSaved": {
+    "message": "模板已保存",
+    "description": "Template saved"
+  },
+  "status_success_templateDeleted": {
+    "message": "模板已删除",
+    "description": "Template deleted"
+  },
+  "status_success_ruleAdded": {
+    "message": "规则已添加",
+    "description": "Rule added"
+  },
+  "status_success_configExported": {
+    "message": "配置已导出",
+    "description": "Configuration exported"
+  },
+  "status_success_configImported": {
+    "message": "配置已导入",
+    "description": "Configuration imported"
+  },
+  
+  "status_error_emptyContent": {
+    "message": "内容不能为空",
+    "description": "Content cannot be empty"
+  },
+  "status_error_noPageInfo": {
+    "message": "无法获取当前页面信息",
+    "description": "Cannot get current page info"
+  },
+  "status_error_extractFailed": {
+    "message": "提取失败: $ERROR$",
+    "description": "Extraction failed",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  "status_error_summarizeFailed": {
+    "message": "总结失败: $ERROR$",
+    "description": "Summarization failed",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  "status_error_saveFailed": {
+    "message": "保存失败: $ERROR$",
+    "description": "Save failed",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  "status_error_noBlinkoConfig": {
+    "message": "请先在设置中配置Blinko连接",
+    "description": "Please configure Blinko first"
+  },
+  "status_error_noOpenAIConfig": {
+    "message": "请先在设置中配置OpenAI",
+    "description": "Please configure OpenAI first"
+  },
+  "status_error_contentTooShort": {
+    "message": "网页内容为空或过短，无法总结",
+    "description": "Content too short to summarize"
+  },
+  
+  "settings_title": {
+    "message": "⚙️ Blinko 设置",
+    "description": "Settings page title"
+  },
+  "settings_tab_blinko": {
+    "message": "Blinko配置",
+    "description": "Blinko config tab"
+  },
+  "settings_tab_openai": {
+    "message": "OpenAI配置",
+    "description": "OpenAI config tab"
+  },
+  "settings_tab_templates": {
+    "message": "模板管理",
+    "description": "Template management tab"
+  },
+  "settings_tab_tags": {
+    "message": "标签配置",
+    "description": "Tag config tab"
+  },
+  "settings_tab_storage": {
+    "message": "存储配置",
+    "description": "Storage config tab"
+  },
+  "settings_tab_general": {
+    "message": "通用设置",
+    "description": "General settings tab"
+  },
+  
+  "settings_blinko_title": {
+    "message": "Blinko 服务配置",
+    "description": "Blinko service configuration"
+  },
+  "settings_blinko_apiUrl": {
+    "message": "API URL",
+    "description": "API URL label"
+  },
+  "settings_blinko_apiUrl_placeholder": {
+    "message": "https://your-blinko-server.com",
+    "description": "API URL placeholder"
+  },
+  "settings_blinko_apiUrl_hint": {
+    "message": "您的Blinko服务地址",
+    "description": "API URL hint"
+  },
+  "settings_blinko_auth": {
+    "message": "Authorization Token",
+    "description": "Authorization token label"
+  },
+  "settings_blinko_auth_placeholder": {
+    "message": "Bearer token",
+    "description": "Authorization token placeholder"
+  },
+  "settings_blinko_auth_hint": {
+    "message": "Blinko的访问令牌",
+    "description": "Authorization token hint"
+  },
+  
+  "settings_openai_title": {
+    "message": "OpenAI 服务配置",
+    "description": "OpenAI service configuration"
+  },
+  "settings_openai_baseUrl": {
+    "message": "Base URL",
+    "description": "Base URL label"
+  },
+  "settings_openai_baseUrl_placeholder": {
+    "message": "https://api.openai.com/v1",
+    "description": "Base URL placeholder"
+  },
+  "settings_openai_baseUrl_hint": {
+    "message": "API基础URL（留空使用默认）",
+    "description": "Base URL hint"
+  },
+  "settings_openai_apiKey": {
+    "message": "API Key",
+    "description": "API Key label"
+  },
+  "settings_openai_apiKey_placeholder": {
+    "message": "sk-...",
+    "description": "API Key placeholder"
+  },
+  "settings_openai_apiKey_hint": {
+    "message": "OpenAI API密钥",
+    "description": "API Key hint"
+  },
+  "settings_openai_model": {
+    "message": "Model",
+    "description": "Model label"
+  },
+  "settings_openai_model_placeholder": {
+    "message": "gpt-3.5-turbo",
+    "description": "Model placeholder"
+  },
+  "settings_openai_model_hint": {
+    "message": "使用的模型名称（留空使用默认）",
+    "description": "Model hint"
+  },
+  
+  "settings_templates_title": {
+    "message": "提示词模板管理",
+    "description": "Template management title"
+  },
+  "settings_templates_defaultSection": {
+    "message": "默认模板",
+    "description": "Default template section"
+  },
+  "settings_templates_defaultLabel": {
+    "message": "选择默认模板",
+    "description": "Select default template"
+  },
+  "settings_templates_defaultHint": {
+    "message": "在没有域名规则匹配时使用此模板",
+    "description": "Default template hint"
+  },
+  "settings_templates_listSection": {
+    "message": "模板列表",
+    "description": "Template list section"
+  },
+  "settings_templates_currentLabel": {
+    "message": "当前模板",
+    "description": "Current template label"
+  },
+  "settings_templates_contentLabel": {
+    "message": "模板内容",
+    "description": "Template content label"
+  },
+  "settings_templates_contentPlaceholder": {
+    "message": "输入system prompt模板...\\n例如：我是一个专业的内容分析师，擅长提取网页核心信息...",
+    "description": "Template content placeholder"
+  },
+  "settings_templates_contentHint": {
+    "message": "提示：模板将作为system prompt使用，网页内容会自动作为用户消息发送。点击\"AI优化\"可自动优化为专业模板",
+    "description": "Template content hint"
+  },
+  "settings_templates_btnOptimize": {
+    "message": "AI优化",
+    "description": "AI optimize button"
+  },
+  "settings_templates_btnSave": {
+    "message": "保存模板",
+    "description": "Save template button"
+  },
+  "settings_templates_btnDelete": {
+    "message": "删除模板",
+    "description": "Delete template button"
+  },
+  "settings_templates_newSection": {
+    "message": "新增模板",
+    "description": "New template section"
+  },
+  "settings_templates_newName": {
+    "message": "模板名称",
+    "description": "Template name label"
+  },
+  "settings_templates_newPlaceholder": {
+    "message": "输入新模板名称",
+    "description": "New template name placeholder"
+  },
+  "settings_templates_btnAdd": {
+    "message": "添加模板",
+    "description": "Add template button"
+  },
+  "settings_templates_domainSection": {
+    "message": "域名特定规则",
+    "description": "Domain specific rules section"
+  },
+  "settings_templates_domainPattern": {
+    "message": "域名规则",
+    "description": "Domain pattern label"
+  },
+  "settings_templates_domainPatternPlaceholder": {
+    "message": "example.com 或 ^https://github\\.com/.*",
+    "description": "Domain pattern placeholder"
+  },
+  "settings_templates_domainPatternHint": {
+    "message": "支持主域名、完整URL或正则表达式",
+    "description": "Domain pattern hint"
+  },
+  "settings_templates_domainType": {
+    "message": "规则类型",
+    "description": "Rule type label"
+  },
+  "settings_templates_domainType_domain": {
+    "message": "主域名匹配",
+    "description": "Domain match option"
+  },
+  "settings_templates_domainType_regex": {
+    "message": "正则表达式",
+    "description": "Regex match option"
+  },
+  "settings_templates_domainType_exact": {
+    "message": "完整URL",
+    "description": "Exact URL option"
+  },
+  "settings_templates_domainTemplate": {
+    "message": "对应模板",
+    "description": "Corresponding template label"
+  },
+  "settings_templates_btnAddRule": {
+    "message": "添加规则",
+    "description": "Add rule button"
+  },
+  "settings_templates_rulesList": {
+    "message": "已配置的规则",
+    "description": "Configured rules label"
+  },
+  
+  "settings_tags_title": {
+    "message": "场景标签配置",
+    "description": "Scenario tags configuration"
+  },
+  "settings_tags_summary": {
+    "message": "总结场景标签",
+    "description": "Summary scenario tag"
+  },
+  "settings_tags_summaryPlaceholder": {
+    "message": "#网页/总结",
+    "description": "Summary tag placeholder"
+  },
+  "settings_tags_summaryHint": {
+    "message": "AI总结时自动添加的标签",
+    "description": "Summary tag hint"
+  },
+  "settings_tags_selection": {
+    "message": "划词场景标签",
+    "description": "Selection scenario tag"
+  },
+  "settings_tags_selectionPlaceholder": {
+    "message": "#网页/划词",
+    "description": "Selection tag placeholder"
+  },
+  "settings_tags_selectionHint": {
+    "message": "划词保存时自动添加的标签",
+    "description": "Selection tag hint"
+  },
+  "settings_tags_image": {
+    "message": "图片场景标签",
+    "description": "Image scenario tag"
+  },
+  "settings_tags_imagePlaceholder": {
+    "message": "#网页/图片",
+    "description": "Image tag placeholder"
+  },
+  "settings_tags_imageHint": {
+    "message": "保存图片时自动添加的标签",
+    "description": "Image tag hint"
+  },
+  "settings_tags_clipping": {
+    "message": "网页剪藏场景标签",
+    "description": "Clipping scenario tag"
+  },
+  "settings_tags_clippingPlaceholder": {
+    "message": "#网页/剪藏",
+    "description": "Clipping tag placeholder"
+  },
+  "settings_tags_clippingHint": {
+    "message": "网页剪藏时自动添加的标签",
+    "description": "Clipping tag hint"
+  },
+  "settings_tags_domainTitle": {
+    "message": "域名特定标签",
+    "description": "Domain specific tags title"
+  },
+  "settings_tags_domainDesc": {
+    "message": "为不同域名/网站设置专属标签，自动应用于所有场景（剪藏、总结、划词、图片）",
+    "description": "Domain specific tags description"
+  },
+  "settings_tags_domainAddLabel": {
+    "message": "添加域名标签规则",
+    "description": "Add domain tag rule label"
+  },
+  "settings_tags_domainPattern": {
+    "message": "域名模式",
+    "description": "Domain pattern label"
+  },
+  "settings_tags_domainPatternPlaceholder": {
+    "message": "例如: github.com",
+    "description": "Domain pattern placeholder"
+  },
+  "settings_tags_domainType": {
+    "message": "匹配类型",
+    "description": "Match type label"
+  },
+  "settings_tags_domainType_domain": {
+    "message": "主域名",
+    "description": "Domain match option"
+  },
+  "settings_tags_domainType_regex": {
+    "message": "正则表达式",
+    "description": "Regex option"
+  },
+  "settings_tags_domainType_exact": {
+    "message": "完整URL",
+    "description": "Exact URL option"
+  },
+  "settings_tags_domainTags": {
+    "message": "标签",
+    "description": "Tags label"
+  },
+  "settings_tags_domainTagsPlaceholder": {
+    "message": "标签 (例如: #开发 #技术)",
+    "description": "Tags placeholder"
+  },
+  "settings_tags_btnAddRule": {
+    "message": "添加规则",
+    "description": "Add rule button"
+  },
+  "settings_tags_advancedOptions": {
+    "message": "高级选项",
+    "description": "Advanced options"
+  },
+  "settings_tags_matchStrategy": {
+    "message": "多规则匹配策略",
+    "description": "Multi-rule match strategy"
+  },
+  "settings_tags_matchStrategy_first": {
+    "message": "仅使用第一个匹配的规则",
+    "description": "First match only"
+  },
+  "settings_tags_matchStrategy_merge": {
+    "message": "合并所有匹配规则的标签",
+    "description": "Merge all matches"
+  },
+  "settings_tags_matchStrategyHint": {
+    "message": "当URL匹配多个规则时的处理方式",
+    "description": "Match strategy hint"
+  },
+  
+  "settings_storage_title": {
+    "message": "图片存储配置",
+    "description": "Image storage configuration"
+  },
+  "settings_storage_keepOriginal": {
+    "message": "是否保留图片原链接",
+    "description": "Keep original image link"
+  },
+  "settings_storage_keepOriginal_yes": {
+    "message": "是",
+    "description": "Yes option"
+  },
+  "settings_storage_keepOriginal_no": {
+    "message": "否（上传到S3）",
+    "description": "No, upload to S3"
+  },
+  "settings_storage_s3Title": {
+    "message": "S3 存储配置",
+    "description": "S3 storage configuration"
+  },
+  "settings_storage_s3AccessKey": {
+    "message": "ACCESS_KEY",
+    "description": "S3 access key label"
+  },
+  "settings_storage_s3AccessKeyPlaceholder": {
+    "message": "访问密钥",
+    "description": "Access key placeholder"
+  },
+  "settings_storage_s3SecretKey": {
+    "message": "SECRET_KEY",
+    "description": "S3 secret key label"
+  },
+  "settings_storage_s3SecretKeyPlaceholder": {
+    "message": "私密密钥",
+    "description": "Secret key placeholder"
+  },
+  "settings_storage_s3Endpoint": {
+    "message": "ENDPOINT",
+    "description": "S3 endpoint label"
+  },
+  "settings_storage_s3EndpointPlaceholder": {
+    "message": "https://s3.amazonaws.com",
+    "description": "Endpoint placeholder"
+  },
+  "settings_storage_s3Region": {
+    "message": "REGION",
+    "description": "S3 region label"
+  },
+  "settings_storage_s3RegionPlaceholder": {
+    "message": "us-east-1",
+    "description": "Region placeholder"
+  },
+  "settings_storage_s3Bucket": {
+    "message": "BUCKET",
+    "description": "S3 bucket label"
+  },
+  "settings_storage_s3BucketPlaceholder": {
+    "message": "my-bucket",
+    "description": "Bucket placeholder"
+  },
+  "settings_storage_s3Cdn": {
+    "message": "CDN（可选）",
+    "description": "CDN label"
+  },
+  "settings_storage_s3CdnPlaceholder": {
+    "message": "https://cdn.example.com",
+    "description": "CDN placeholder"
+  },
+  "settings_storage_s3CdnHint": {
+    "message": "使用CDN加速访问",
+    "description": "CDN hint"
+  },
+  "settings_storage_s3CustomPath": {
+    "message": "自定义路径（可选）",
+    "description": "Custom path label"
+  },
+  "settings_storage_s3CustomPathPlaceholder": {
+    "message": "blinko/images",
+    "description": "Custom path placeholder"
+  },
+  "settings_storage_s3CustomPathHint": {
+    "message": "存储路径前缀",
+    "description": "Custom path hint"
+  },
+  "settings_storage_s3Acl": {
+    "message": "图片访问控制",
+    "description": "Image access control"
+  },
+  "settings_storage_s3Acl_public": {
+    "message": "公开访问（推荐）",
+    "description": "Public access option"
+  },
+  "settings_storage_s3Acl_private": {
+    "message": "私密访问",
+    "description": "Private access option"
+  },
+  "settings_storage_s3AclHint": {
+    "message": "公开: 图片URL永久有效；私密: 需要授权访问，URL会过期",
+    "description": "ACL hint"
+  },
+  "settings_storage_s3PresignedExpiry": {
+    "message": "预签名URL有效期",
+    "description": "Presigned URL expiry"
+  },
+  "settings_storage_s3Expiry_30": {
+    "message": "1个月",
+    "description": "1 month option"
+  },
+  "settings_storage_s3Expiry_180": {
+    "message": "6个月",
+    "description": "6 months option"
+  },
+  "settings_storage_s3Expiry_365": {
+    "message": "1年",
+    "description": "1 year option"
+  },
+  "settings_storage_s3Expiry_1825": {
+    "message": "5年",
+    "description": "5 years option"
+  },
+  "settings_storage_s3Expiry_3650": {
+    "message": "10年（推荐）",
+    "description": "10 years option"
+  },
+  "settings_storage_s3ExpiryHint": {
+    "message": "⚠️ 超过有效期后图片链接会失效，建议选择较长期限",
+    "description": "Expiry hint"
+  },
+  "settings_storage_btnValidate": {
+    "message": "验证S3配置",
+    "description": "Validate S3 config button"
+  },
+  
+  "settings_general_title": {
+    "message": "通用设置",
+    "description": "General settings title"
+  },
+  "settings_general_linkSection": {
+    "message": "网页链接选项",
+    "description": "Web link options section"
+  },
+  "settings_general_linkSummary": {
+    "message": "总结时是否携带网页链接",
+    "description": "Include link when summarizing"
+  },
+  "settings_general_linkSelection": {
+    "message": "划词保存时是否包含网页链接",
+    "description": "Include link when saving selection"
+  },
+  "settings_general_linkImage": {
+    "message": "图片保存时是否包含网页链接",
+    "description": "Include link when saving images"
+  },
+  "settings_general_linkQuickNote": {
+    "message": "速写时包含网页链接",
+    "description": "Include link in quick notes"
+  },
+  "settings_general_lazyLoadSection": {
+    "message": "懒加载触发设置",
+    "description": "Lazy load trigger settings section"
+  },
+  "settings_general_lazyLoadEnable": {
+    "message": "启用懒加载触发",
+    "description": "Enable lazy load trigger"
+  },
+  "settings_general_lazyLoadHint": {
+    "message": "提取网页正文前，自动滚动页面触发懒加载图片。页面会自动滚动，完成后会恢复位置。",
+    "description": "Lazy load trigger hint"
+  },
+  "settings_general_lazyLoadSpeed": {
+    "message": "滚动速度",
+    "description": "Scroll speed label"
+  },
+  "settings_general_lazyLoadSpeed_fast": {
+    "message": "快（约3-5秒）",
+    "description": "Fast speed option"
+  },
+  "settings_general_lazyLoadSpeed_medium": {
+    "message": "中（约5-8秒，推荐）",
+    "description": "Medium speed option"
+  },
+  "settings_general_lazyLoadSpeed_slow": {
+    "message": "慢（约8-12秒）",
+    "description": "Slow speed option"
+  },
+  "settings_general_lazyLoadSpeedHint": {
+    "message": "更慢的速度可以确保更多图片被触发加载",
+    "description": "Scroll speed hint"
+  },
+  "settings_general_lazyLoadMaxWait": {
+    "message": "最大等待时间",
+    "description": "Max wait time label"
+  },
+  "settings_general_lazyLoadMaxWait_5": {
+    "message": "5秒",
+    "description": "5 seconds option"
+  },
+  "settings_general_lazyLoadMaxWait_10": {
+    "message": "10秒（推荐）",
+    "description": "10 seconds option"
+  },
+  "settings_general_lazyLoadMaxWait_15": {
+    "message": "15秒",
+    "description": "15 seconds option"
+  },
+  "settings_general_lazyLoadMaxWaitHint": {
+    "message": "超过此时间后自动停止滚动触发",
+    "description": "Max wait time hint"
+  },
+  "settings_general_languageSection": {
+    "message": "语言设置",
+    "description": "Language settings section"
+  },
+  "settings_general_language": {
+    "message": "界面语言",
+    "description": "Interface language label"
+  },
+  "settings_general_language_auto": {
+    "message": "自动（跟随浏览器）",
+    "description": "Auto language option"
+  },
+  "settings_general_language_zhCN": {
+    "message": "中文（简体）",
+    "description": "Simplified Chinese option"
+  },
+  "settings_general_language_en": {
+    "message": "English",
+    "description": "English option"
+  },
+  "settings_general_languageHint": {
+    "message": "切换语言后需要刷新页面",
+    "description": "Language change hint"
+  },
+  "settings_general_btnRefresh": {
+    "message": "立即刷新",
+    "description": "Refresh now button"
+  },
+  "settings_general_configSection": {
+    "message": "配置管理",
+    "description": "Configuration management section"
+  },
+  
+  "common_selectPlaceholder": {
+    "message": "请选择...",
+    "description": "Select placeholder"
+  },
+  
+  "background_contextMenu_saveSelection": {
+    "message": "保存选中内容到 Blinko",
+    "description": "Save selection context menu"
+  },
+  "background_contextMenu_saveImage": {
+    "message": "保存图片到 Blinko",
+    "description": "Save image context menu"
+  },
+  "background_contextMenu_saveLink": {
+    "message": "保存链接到 Blinko",
+    "description": "Save link context menu"
+  },
+  
+  "background_notification_saveSuccess": {
+    "message": "保存成功",
+    "description": "Save success notification title"
+  },
+  "background_notification_saveFailed": {
+    "message": "保存失败",
+    "description": "Save failed notification title"
+  },
+  "background_notification_error": {
+    "message": "错误",
+    "description": "Error notification title"
+  },
+  "background_notification_selectionSaved": {
+    "message": "选中内容已保存到 Blinko",
+    "description": "Selection saved message"
+  },
+  "background_notification_imageSaved": {
+    "message": "图片已保存到 Blinko",
+    "description": "Image saved message"
+  },
+  "background_notification_linkSaved": {
+    "message": "链接已保存到 Blinko",
+    "description": "Link saved message"
+  },
+  "background_notification_noSelection": {
+    "message": "没有选中任何文本",
+    "description": "No selection error"
+  },
+  "background_notification_noImageUrl": {
+    "message": "无法获取图片URL",
+    "description": "Cannot get image URL error"
+  },
+  "background_notification_noLinkUrl": {
+    "message": "无法获取链接URL",
+    "description": "Cannot get link URL error"
+  },
+  
+  "error_fillComplete": {
+    "message": "请填写完整的API配置信息",
+    "description": "Please fill in complete API config"
+  },
+  "error_authFailed": {
+    "message": "授权失败，请检查Authorization令牌",
+    "description": "Authorization failed"
+  },
+  "error_connectionFailed": {
+    "message": "连接失败: HTTP $STATUS$",
+    "description": "Connection failed with status",
+    "placeholders": {
+      "status": {"content": "$1"}
+    }
+  },
+  "error_networkFailed": {
+    "message": "网络连接失败，请检查API_URL是否正确: $ERROR$",
+    "description": "Network connection failed",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  "error_networkError": {
+    "message": "网络错误: $ERROR$",
+    "description": "Network error",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  "error_apiKeyInvalid": {
+    "message": "API Key验证失败，请检查key是否正确",
+    "description": "API key validation failed"
+  },
+  "error_modelNotAvailable": {
+    "message": "模型不可用，请检查model名称",
+    "description": "Model not available"
+  },
+  "error_apiQuotaExceeded": {
+    "message": "API额度不足",
+    "description": "API quota exceeded"
+  },
+  "error_timeout": {
+    "message": "请求超时，请重试",
+    "description": "Request timeout"
+  },
+  "error_templateEmpty": {
+    "message": "模板内容为空，无法优化",
+    "description": "Template content empty"
+  },
+  "error_noSummaryGenerated": {
+    "message": "未能生成总结内容",
+    "description": "No summary generated"
+  },
+  "error_confirmDelete": {
+    "message": "确定要删除模板 \"$NAME$\" 吗？",
+    "description": "Confirm delete template",
+    "placeholders": {
+      "name": {"content": "$1"}
+    }
+  },
+  "error_confirmDeleteRule": {
+    "message": "确定要删除此规则吗？",
+    "description": "Confirm delete rule"
+  },
+  "error_templateNameEmpty": {
+    "message": "模板名称不能为空",
+    "description": "Template name cannot be empty"
+  },
+  "error_templateExists": {
+    "message": "模板名称已存在",
+    "description": "Template name already exists"
+  },
+  "error_patternEmpty": {
+    "message": "域名规则不能为空",
+    "description": "Domain pattern cannot be empty"
+  },
+  "error_templateNotSelected": {
+    "message": "请选择模板",
+    "description": "Please select template"
+  },
+  "error_invalidJson": {
+    "message": "配置文件格式错误",
+    "description": "Invalid JSON format"
+  },
+  "error_importFailed": {
+    "message": "配置导入失败: $ERROR$",
+    "description": "Import failed",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  
+  "settings_templates_error_nameEmpty": {
+    "message": "请输入模板名称",
+    "description": "Template name cannot be empty"
+  },
+  "settings_templates_error_nameExists": {
+    "message": "模板名称已存在，请使用其他名称",
+    "description": "Template name already exists"
+  },
+  "settings_templates_success_created": {
+    "message": "模板\"$NAME$\"已创建",
+    "description": "Template created successfully",
+    "placeholders": {
+      "name": {"content": "$1"}
+    }
+  },
+  "settings_templates_error_noSelection": {
+    "message": "请先选择要保存的模板",
+    "description": "Please select template to save"
+  },
+  "settings_templates_error_noSelectionDelete": {
+    "message": "请先选择要删除的模板",
+    "description": "Please select template to delete"
+  },
+  "settings_templates_success_deleted": {
+    "message": "模板\"$NAME$\"已删除",
+    "description": "Template deleted",
+    "placeholders": {
+      "name": {"content": "$1"}
+    }
+  },
+  "settings_templates_error_contentEmpty": {
+    "message": "模板内容为空，无法优化",
+    "description": "Template content empty for optimization"
+  },
+  "settings_templates_error_noOpenAI": {
+    "message": "请先在OpenAI配置标签页完成设置",
+    "description": "OpenAI not configured"
+  },
+  "settings_templates_loading_optimizing": {
+    "message": "正在优化模板...",
+    "description": "Optimizing template message"
+  },
+  "settings_templates_btn_optimizing": {
+    "message": "优化中...",
+    "description": "Optimizing button text"
+  },
+  "settings_templates_success_optimized": {
+    "message": "优化完成，请检查后保存",
+    "description": "Optimization completed"
+  },
+  "settings_templates_error_optimizeFailed": {
+    "message": "优化失败: $ERROR$",
+    "description": "Optimization failed",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  "settings_templates_success_defaultUpdated": {
+    "message": "默认模板已更新",
+    "description": "Default template updated"
+  },
+  "settings_templates_error_patternEmpty": {
+    "message": "请输入域名规则",
+    "description": "Domain pattern empty"
+  },
+  "settings_templates_error_noTemplateSelected": {
+    "message": "请选择对应的模板",
+    "description": "No template selected for rule"
+  },
+  "settings_templates_success_ruleAdded": {
+    "message": "域名规则已添加",
+    "description": "Domain rule added"
+  },
+  "settings_templates_success_ruleDeleted": {
+    "message": "规则已删除",
+    "description": "Rule deleted"
+  },
+  "settings_templates_emptyList": {
+    "message": "暂无域名规则",
+    "description": "Empty domain rules list"
+  },
+  "settings_templates_ruleType_domain": {
+    "message": "主域名",
+    "description": "Domain rule type display"
+  },
+  "settings_templates_ruleType_regex": {
+    "message": "正则",
+    "description": "Regex rule type display"
+  },
+  "settings_templates_ruleType_exact": {
+    "message": "完整URL",
+    "description": "Exact URL rule type display"
+  },
+  "settings_templates_confirmDelete": {
+    "message": "确定要删除模板\"$NAME$\"吗？",
+    "description": "Confirm delete template dialog",
+    "placeholders": {
+      "name": {"content": "$1"}
+    }
+  },
+  "settings_templates_defaultName": {
+    "message": "默认模板",
+    "description": "Default template name"
+  },
+  "settings_templates_defaultContent": {
+    "message": "我是一个专业的内容分析师，擅长快速理解和提炼网页的核心信息。我会关注文章的主要观点、关键数据和重要结论，并以简洁清晰的方式进行总结。",
+    "description": "Default template content"
+  },
+  
+  "settings_tags_error_patternEmpty": {
+    "message": "请输入域名规则",
+    "description": "Domain pattern empty for tags"
+  },
+  "settings_tags_error_tagsEmpty": {
+    "message": "请输入标签",
+    "description": "Tags field empty"
+  },
+  "settings_tags_success_ruleAdded": {
+    "message": "域名标签规则已添加",
+    "description": "Domain tag rule added"
+  },
+  "settings_tags_success_ruleDeleted": {
+    "message": "规则已删除",
+    "description": "Tag rule deleted"
+  },
+  "settings_tags_success_strategyUpdated": {
+    "message": "匹配策略已更新",
+    "description": "Match strategy updated"
+  },
+  "settings_tags_emptyList": {
+    "message": "暂无域名标签规则",
+    "description": "Empty domain tag rules list"
+  },
+  
+  "settings_storage_loading_validating": {
+    "message": "正在验证S3配置...",
+    "description": "Validating S3 config message"
+  },
+  
+  "settings_general_success_exported": {
+    "message": "配置已导出",
+    "description": "Config exported successfully"
+  },
+  "settings_general_error_exportFailed": {
+    "message": "导出失败: $ERROR$",
+    "description": "Export failed",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  "settings_general_confirmImport": {
+    "message": "导入将覆盖当前配置，是否继续？",
+    "description": "Confirm import dialog"
+  },
+  "settings_general_success_imported": {
+    "message": "配置导入成功，页面将刷新",
+    "description": "Config imported successfully"
+  },
+  
+  "api_error_configIncomplete": {
+    "message": "请填写完整的API配置信息",
+    "description": "API config incomplete"
+  },
+  "api_error_authFailed": {
+    "message": "授权失败，请检查Authorization令牌",
+    "description": "Authorization failed"
+  },
+  "api_error_httpStatus": {
+    "message": "连接失败: HTTP $STATUS$",
+    "description": "HTTP status error",
+    "placeholders": {
+      "status": {"content": "$1"}
+    }
+  },
+  "api_error_networkConnection": {
+    "message": "网络连接失败，请检查API_URL是否正确: $ERROR$",
+    "description": "Network connection failed",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  "api_success_connected": {
+    "message": "连接成功",
+    "description": "Connected successfully"
+  },
+  "api_success_connectedWithResponse": {
+    "message": "连接成功，响应: $TEXT$",
+    "description": "Connected with response",
+    "placeholders": {
+      "text": {"content": "$1"}
+    }
+  },
+  "api_error_noBlinkoConfig": {
+    "message": "请先在设置中配置Blinko连接",
+    "description": "Blinko not configured"
+  },
+  "api_error_authFailedCheck": {
+    "message": "授权失败，请检查配置",
+    "description": "Auth failed check config"
+  },
+  "api_error_saveHttpStatus": {
+    "message": "保存失败: HTTP $STATUS$",
+    "description": "Save HTTP error",
+    "placeholders": {
+      "status": {"content": "$1"}
+    }
+  },
+  "api_success_noteSaved": {
+    "message": "保存成功",
+    "description": "Note saved successfully"
+  },
+  "api_error_noApiKey": {
+    "message": "请填写API Key",
+    "description": "No API key"
+  },
+  "api_error_connectionHttpStatus": {
+    "message": "连接失败: HTTP $STATUS$",
+    "description": "Connection HTTP error",
+    "placeholders": {
+      "status": {"content": "$1"}
+    }
+  },
+  "api_error_cannotConnect": {
+    "message": "无法连接到API服务，请检查base_url: $ERROR$",
+    "description": "Cannot connect to API",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  "api_error_summarizeHttpStatus": {
+    "message": "总结失败: HTTP $STATUS$",
+    "description": "Summarize HTTP error",
+    "placeholders": {
+      "status": {"content": "$1"}
+    }
+  },
+  "api_success_summarized": {
+    "message": "总结成功",
+    "description": "Summarized successfully"
+  },
+  "api_error_optimizeHttpStatus": {
+    "message": "优化失败: HTTP $STATUS$",
+    "description": "Optimize HTTP error",
+    "placeholders": {
+      "status": {"content": "$1"}
+    }
+  },
+  "api_success_templateOptimized": {
+    "message": "模板优化成功",
+    "description": "Template optimized"
+  },
+  
+  "s3_error_configIncomplete": {
+    "message": "请填写所有必填的S3配置项",
+    "description": "S3 config incomplete"
+  },
+  "s3_error_endpointInvalid": {
+    "message": "ENDPOINT格式错误",
+    "description": "Invalid endpoint format"
+  },
+  "s3_success_connected": {
+    "message": "S3连接成功！存储桶可访问",
+    "description": "S3 connected successfully"
+  },
+  "s3_error_accessKeyFailed": {
+    "message": "访问密钥验证失败，请检查ACCESS_KEY和SECRET_KEY",
+    "description": "Access key validation failed"
+  },
+  "s3_error_bucketNotFound": {
+    "message": "存储桶不存在，请检查BUCKET名称",
+    "description": "Bucket not found"
+  },
+  "s3_error_regionError": {
+    "message": "区域配置错误，请检查REGION设置",
+    "description": "Region configuration error"
+  },
+  "s3_error_endpointUnreachable": {
+    "message": "无法连接到S3端点，请检查ENDPOINT配置和网络连接",
+    "description": "Cannot reach S3 endpoint"
+  },
+  "s3_error_noPermission": {
+    "message": "没有上传权限，请检查 IAM 策略",
+    "description": "No upload permission"
+  },
+  "s3_error_uploadFailed": {
+    "message": "上传失败，请检查网络连接",
+    "description": "Upload failed"
+  },
+  "s3_error_uploadFailedGeneric": {
+    "message": "上传失败",
+    "description": "Generic upload failed"
+  },
+  "s3_success_uploaded": {
+    "message": "上传成功",
+    "description": "Uploaded successfully"
+  },
+  
+  "validation_templateEmpty": {
+    "message": "模板内容不能为空",
+    "description": "Template content cannot be empty"
+  },
+  "validation_templateTooLong": {
+    "message": "模板内容过长，请控制在5000字符以内",
+    "description": "Template content too long"
+  },
+  "validation_templateValid": {
+    "message": "模板验证通过",
+    "description": "Template validation passed"
+  },
+  "validation_patternEmpty": {
+    "message": "域名规则不能为空",
+    "description": "Domain pattern cannot be empty"
+  },
+  "validation_regexValid": {
+    "message": "正则表达式有效",
+    "description": "Regex is valid"
+  },
+  "validation_regexInvalid": {
+    "message": "无效的正则表达式",
+    "description": "Invalid regex"
+  },
+  "validation_urlValid": {
+    "message": "URL格式有效",
+    "description": "URL format valid"
+  },
+  "validation_urlInvalid": {
+    "message": "无效的URL格式",
+    "description": "Invalid URL format"
+  },
+  "validation_domainRuleValid": {
+    "message": "域名规则有效",
+    "description": "Domain rule valid"
+  },
+  
+  "draft_restore_prompt": {
+    "message": "检测到未完成的草稿",
+    "description": "Draft restore prompt"
+  },
+  "draft_btn_restore": {
+    "message": "恢复",
+    "description": "Restore draft button"
+  },
+  "draft_btn_ignore": {
+    "message": "忽略",
+    "description": "Ignore draft button"
+  },
+  "draft_btn_save": {
+    "message": "保存为草稿",
+    "description": "Save as draft button"
+  },
+  "draft_btn_manage": {
+    "message": "草稿管理",
+    "description": "Manage drafts button"
+  },
+  "draft_btn_load": {
+    "message": "加载",
+    "description": "Load draft button"
+  },
+  "draft_btn_delete": {
+    "message": "删除",
+    "description": "Delete draft button"
+  },
+  "draft_auto_saved": {
+    "message": "已自动保存",
+    "description": "Auto saved indicator"
+  },
+  "draft_manager_title": {
+    "message": "草稿管理",
+    "description": "Draft manager modal title"
+  },
+  "draft_empty_message": {
+    "message": "暂无草稿",
+    "description": "Empty drafts message"
+  },
+  "draft_empty_hint": {
+    "message": "点击\"保存为草稿\"按钮可保存当前内容",
+    "description": "Empty drafts hint"
+  },
+  "draft_restored": {
+    "message": "草稿已恢复",
+    "description": "Draft restored message"
+  },
+  "draft_ignored": {
+    "message": "草稿已忽略",
+    "description": "Draft ignored message"
+  },
+  "draft_loaded": {
+    "message": "草稿已加载",
+    "description": "Draft loaded message"
+  },
+  "draft_error_empty": {
+    "message": "内容不能为空",
+    "description": "Draft empty error"
+  },
+  "draft_prompt_name": {
+    "message": "请输入草稿名称",
+    "description": "Draft name prompt"
+  },
+  "draft_confirm_delete": {
+    "message": "确定删除此草稿？",
+    "description": "Delete draft confirmation"
+  },
+  "draft_just_now": {
+    "message": "刚刚",
+    "description": "Just now time"
+  },
+  "draft_minutes_ago": {
+    "message": "$1分钟前",
+    "description": "Minutes ago",
+    "placeholders": {
+      "minutes": {"content": "$1"}
+    }
+  },
+  "draft_hours_ago": {
+    "message": "$1小时前",
+    "description": "Hours ago",
+    "placeholders": {
+      "hours": {"content": "$1"}
+    }
+  },
+  
+  "queue_enqueued_network_error": {
+    "message": "网络不可用，已加入离线队列",
+    "description": "Enqueued due to network error"
+  },
+  "queue_enqueued_server_error": {
+    "message": "服务器错误，已加入离线队列",
+    "description": "Enqueued due to server error"
+  },
+  "background_notification_queued": {
+    "message": "已加入离线队列",
+    "description": "Queued notification title"
+  },
+  "background_notification_willRetry": {
+    "message": "网络恢复后将自动重试",
+    "description": "Will retry notification"
+  },
+  "background_notification_processing": {
+    "message": "处理中",
+    "description": "Processing notification"
+  },
+  
+  "context_menu_save_selection": {
+    "message": "📝 保存选中内容",
+    "description": "Context menu save selection"
+  },
+  "context_menu_save_image": {
+    "message": "🖼️ 保存图片",
+    "description": "Context menu save image"
+  },
+  "context_menu_save_link": {
+    "message": "🔗 保存链接",
+    "description": "Context menu save link"
+  },
+  "context_menu_save_full_page": {
+    "message": "📄 保存整个页面",
+    "description": "Context menu save full page"
+  },
+  "context_menu_save_screenshot": {
+    "message": "📸 保存页面截图",
+    "description": "Context menu save screenshot"
+  },
+  "context_menu_use_template": {
+    "message": "🎯 使用模板",
+    "description": "Context menu use template"
+  },
+  "context_menu_extracting_page": {
+    "message": "正在提取页面内容...",
+    "description": "Extracting page message"
+  },
+  "context_menu_capturing_screenshot": {
+    "message": "正在捕获截图...",
+    "description": "Capturing screenshot message"
+  },
+  "context_menu_full_page_saved": {
+    "message": "页面已保存到 Blinko",
+    "description": "Full page saved message"
+  },
+  "context_menu_screenshot_saved": {
+    "message": "截图已保存到 Blinko",
+    "description": "Screenshot saved message"
+  },
+  "context_menu_screenshot_not_supported": {
+    "message": "当前页面不支持截图",
+    "description": "Screenshot not supported error"
+  }
+}
+

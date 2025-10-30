@@ -1,0 +1,24 @@
+{
+  "name": "blinko-chrome-extension",
+  "version": "1.1.0",
+  "description": "Blinko网页剪藏Chrome扩展",
+  "scripts": {
+    "lint": "eslint src/**/*.js",
+    "build": "echo 'Building extension...' && echo 'Extension ready in root directory'",
+    "pack": "powershell Compress-Archive -Path manifest.json,src,icons,dist -DestinationPath blinko-extension.zip -Force"
+  },
+  "keywords": [
+    "chrome-extension",
+    "blinko",
+    "web-clipper",
+    "note-taking"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.0.0"
+  },
+  "dependencies": {
+    "aws4fetch": "^1.0.20"
+  }
+}

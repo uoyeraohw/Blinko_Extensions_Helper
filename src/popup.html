@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blinko 剪藏</title>
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Tab导航 -->
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="clipping" data-i18n="popup_tab_clipping">剪藏</button>
+      <button class="tab-btn" data-tab="quick-note" data-i18n="popup_tab_quickNote">速写</button>
+      <button class="tab-btn" data-tab="settings" data-i18n="popup_tab_settings">设置</button>
+    </nav>
+
+    <!-- Tab 1: 剪藏 -->
+    <div class="tab-content active" id="clipping-tab">
+      <div class="actions">
+        <button class="btn btn-primary" id="extract-content">
+          <span class="icon">📄</span>
+          <span data-i18n="popup_clipping_btnExtract">提取网页正文</span>
+        </button>
+        <button class="btn btn-primary" id="extract-and-summarize">
+          <span class="icon">✨</span>
+          <span data-i18n="popup_clipping_btnSummarize">提取并总结</span>
+        </button>
+      </div>
+
+      <div class="form-group">
+        <label data-i18n="popup_clipping_labelPreview">预览</label>
+        <textarea id="preview-content" rows="12" data-i18n-placeholder="popup_clipping_placeholderPreview" placeholder="提取的内容将显示在这里..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label data-i18n="popup_clipping_labelType">类型</label>
+        <div class="type-selector-group">
+          <label class="type-radio">
+            <input type="radio" name="clipping-type" value="0" checked>
+            <span data-i18n="popup_type_flash">闪念</span>
+          </label>
+          <label class="type-radio">
+            <input type="radio" name="clipping-type" value="1">
+            <span data-i18n="popup_type_note">笔记</span>
+          </label>
+          <label class="type-radio">
+            <input type="radio" name="clipping-type" value="2">
+            <span data-i18n="popup_type_reminder">提醒</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-secondary" id="clear-preview" data-i18n="common_btn_clear">清空</button>
+        <button class="btn btn-success" id="submit-clipping" data-i18n="common_btn_submit">提交</button>
+      </div>
+
+      <div class="status-message" id="clipping-status"></div>
+    </div>
+
+    <!-- Tab 2: 速写 -->
+    <div class="tab-content" id="quick-note-tab">
+      <!-- 草稿恢复提示条 -->
+      <div id="draft-restore-banner" class="draft-banner" style="display: none;">
+        <div class="draft-banner-content">
+          <span class="draft-banner-icon">💾</span>
+          <span class="draft-banner-text" data-i18n="draft_restore_prompt">检测到未完成的草稿</span>
+          <span id="draft-timestamp" class="draft-timestamp"></span>
+        </div>
+        <div class="draft-banner-actions">
+          <button class="btn btn-sm btn-primary" id="restore-draft-btn" data-i18n="draft_btn_restore">恢复</button>
+          <button class="btn btn-sm btn-secondary" id="ignore-draft-btn" data-i18n="draft_btn_ignore">忽略</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label data-i18n="popup_quickNote_labelContent">内容</label>
+        <div class="textarea-wrapper">
+          <textarea id="quick-note-content" rows="14" data-i18n-placeholder="popup_quickNote_placeholder" placeholder="快速记录想法..." autofocus></textarea>
+          <div class="auto-save-indicator" id="auto-save-indicator" style="display: none;">
+            <span class="save-icon">✓</span>
+            <span data-i18n="draft_auto_saved">已自动保存</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label data-i18n="popup_clipping_labelType">类型</label>
+        <div class="type-selector-group">
+          <label class="type-radio">
+            <input type="radio" name="quick-note-type" value="0" checked>
+            <span data-i18n="popup_type_flash">闪念</span>
+          </label>
+          <label class="type-radio">
+            <input type="radio" name="quick-note-type" value="1">
+            <span data-i18n="popup_type_note">笔记</span>
+          </label>
+          <label class="type-radio">
+            <input type="radio" name="quick-note-type" value="2">
+            <span data-i18n="popup_type_reminder">提醒</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-secondary" id="save-draft-btn">
+          <span class="icon">💾</span>
+          <span data-i18n="draft_btn_save">保存为草稿</span>
+        </button>
+        <button class="btn btn-secondary" id="manage-drafts-btn">
+          <span class="icon">📋</span>
+          <span data-i18n="draft_btn_manage">草稿管理</span>
+        </button>
+        <button class="btn btn-secondary" id="clear-quick-note" data-i18n="common_btn_clear">清空</button>
+        <button class="btn btn-success" id="submit-quick-note" data-i18n="common_btn_submit">提交</button>
+      </div>
+
+      <div class="status-message" id="quick-note-status"></div>
+    </div>
+
+    <!-- 草稿管理模态框 -->
+    <div id="draft-manager-modal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 data-i18n="draft_manager_title">草稿管理</h3>
+          <button class="modal-close" id="close-draft-manager">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div id="drafts-list" class="drafts-list">
+            <!-- 草稿列表将在这里动态生成 -->
+          </div>
+          <div id="empty-drafts-message" class="empty-message" style="display: none;">
+            <p data-i18n="draft_empty_message">暂无草稿</p>
+            <small data-i18n="draft_empty_hint">点击"保存为草稿"按钮可保存当前内容</small>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" id="close-draft-manager-btn" data-i18n="common_btn_close">关闭</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 加载指示器 -->
+    <div class="loading-overlay" id="loading-overlay" style="display: none;">
+      <div class="spinner"></div>
+      <div id="loading-text" data-i18n="status_loading_processing">处理中...</div>
+    </div>
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
+

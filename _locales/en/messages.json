@@ -1,0 +1,1432 @@
+{
+  "extName": {
+    "message": "Blinko Web Clipper",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "A browser extension designed for Blinko, supporting web clipping, AI summarization and quick note features",
+    "description": "Extension description"
+  },
+  
+  "popup_tab_clipping": {
+    "message": "Clip",
+    "description": "Clipping tab label"
+  },
+  "popup_tab_quickNote": {
+    "message": "Quick Note",
+    "description": "Quick note tab label"
+  },
+  "popup_tab_settings": {
+    "message": "Settings",
+    "description": "Settings tab label"
+  },
+  
+  "popup_clipping_btnExtract": {
+    "message": "Extract Content",
+    "description": "Extract content button"
+  },
+  "popup_clipping_btnSummarize": {
+    "message": "Extract & Summarize",
+    "description": "Extract and summarize button"
+  },
+  "popup_clipping_labelPreview": {
+    "message": "Preview",
+    "description": "Preview label"
+  },
+  "popup_clipping_placeholderPreview": {
+    "message": "Extracted content will appear here...",
+    "description": "Preview textarea placeholder"
+  },
+  "popup_clipping_labelType": {
+    "message": "Type",
+    "description": "Type label"
+  },
+  "popup_type_flash": {
+    "message": "Flash",
+    "description": "Flash type option"
+  },
+  "popup_type_note": {
+    "message": "Note",
+    "description": "Note type option"
+  },
+  "popup_type_reminder": {
+    "message": "Reminder",
+    "description": "Reminder type option"
+  },
+  
+  "popup_quickNote_labelContent": {
+    "message": "Content",
+    "description": "Content label for quick note"
+  },
+  "popup_quickNote_placeholder": {
+    "message": "Quick note your thoughts...",
+    "description": "Quick note textarea placeholder"
+  },
+  
+  "common_btn_clear": {
+    "message": "Clear",
+    "description": "Clear button"
+  },
+  "common_btn_submit": {
+    "message": "Submit",
+    "description": "Submit button"
+  },
+  "common_btn_save": {
+    "message": "Save",
+    "description": "Save button"
+  },
+  "common_btn_delete": {
+    "message": "Delete",
+    "description": "Delete button"
+  },
+  "common_btn_cancel": {
+    "message": "Cancel",
+    "description": "Cancel button"
+  },
+  "common_btn_validate": {
+    "message": "Validate",
+    "description": "Validate connection button"
+  },
+  "common_btn_add": {
+    "message": "Add",
+    "description": "Add button"
+  },
+  "common_btn_export": {
+    "message": "Export Config",
+    "description": "Export config button"
+  },
+  "common_btn_import": {
+    "message": "Import Config",
+    "description": "Import config button"
+  },
+  
+  "status_loading_processing": {
+    "message": "Processing...",
+    "description": "Generic processing message"
+  },
+  "status_loading_extracting": {
+    "message": "Extracting content...",
+    "description": "Extracting content message"
+  },
+  "status_loading_summarizing": {
+    "message": "Generating summary with AI...",
+    "description": "Summarizing content message"
+  },
+  "status_loading_saving": {
+    "message": "Saving to Blinko...",
+    "description": "Saving to Blinko message"
+  },
+  "status_loading_processingImages": {
+    "message": "Processing images ($CURRENT$/$TOTAL$)...",
+    "description": "Processing images message",
+    "placeholders": {
+      "current": {"content": "$1"},
+      "total": {"content": "$2"}
+    }
+  },
+  "status_loading_lazyLoad": {
+    "message": "Triggering lazy-loaded images...",
+    "description": "Triggering lazy load message"
+  },
+  "status_loading_validating": {
+    "message": "Validating connection...",
+    "description": "Validating connection message"
+  },
+  
+  "status_success_extracted": {
+    "message": "Content extracted successfully",
+    "description": "Content extracted successfully"
+  },
+  "status_success_summarized": {
+    "message": "Summary completed",
+    "description": "Summary completed"
+  },
+  "status_success_saved": {
+    "message": "Saved successfully!",
+    "description": "Saved successfully"
+  },
+  "status_success_quickNoteSaved": {
+    "message": "Quick note saved!",
+    "description": "Quick note saved"
+  },
+  "status_success_cleared": {
+    "message": "Cleared",
+    "description": "Cleared"
+  },
+  "status_success_settingsSaved": {
+    "message": "Settings saved",
+    "description": "Settings saved"
+  },
+  "status_success_connected": {
+    "message": "Connected successfully",
+    "description": "Connected successfully"
+  },
+  "status_success_templateSaved": {
+    "message": "Template saved",
+    "description": "Template saved"
+  },
+  "status_success_templateDeleted": {
+    "message": "Template deleted",
+    "description": "Template deleted"
+  },
+  "status_success_ruleAdded": {
+    "message": "Rule added",
+    "description": "Rule added"
+  },
+  "status_success_configExported": {
+    "message": "Configuration exported",
+    "description": "Configuration exported"
+  },
+  "status_success_configImported": {
+    "message": "Configuration imported",
+    "description": "Configuration imported"
+  },
+  
+  "status_error_emptyContent": {
+    "message": "Content cannot be empty",
+    "description": "Content cannot be empty"
+  },
+  "status_error_noPageInfo": {
+    "message": "Cannot get current page info",
+    "description": "Cannot get current page info"
+  },
+  "status_error_extractFailed": {
+    "message": "Extraction failed: $ERROR$",
+    "description": "Extraction failed",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  "status_error_summarizeFailed": {
+    "message": "Summarization failed: $ERROR$",
+    "description": "Summarization failed",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  "status_error_saveFailed": {
+    "message": "Save failed: $ERROR$",
+    "description": "Save failed",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  "status_error_noBlinkoConfig": {
+    "message": "Please configure Blinko connection in settings first",
+    "description": "Please configure Blinko first"
+  },
+  "status_error_noOpenAIConfig": {
+    "message": "Please configure OpenAI in settings first",
+    "description": "Please configure OpenAI first"
+  },
+  "status_error_contentTooShort": {
+    "message": "Content is empty or too short to summarize",
+    "description": "Content too short to summarize"
+  },
+  
+  "settings_title": {
+    "message": "⚙️ Blinko Settings",
+    "description": "Settings page title"
+  },
+  "settings_tab_blinko": {
+    "message": "Blinko Config",
+    "description": "Blinko config tab"
+  },
+  "settings_tab_openai": {
+    "message": "OpenAI Config",
+    "description": "OpenAI config tab"
+  },
+  "settings_tab_templates": {
+    "message": "Templates",
+    "description": "Template management tab"
+  },
+  "settings_tab_tags": {
+    "message": "Tags",
+    "description": "Tag config tab"
+  },
+  "settings_tab_storage": {
+    "message": "Storage",
+    "description": "Storage config tab"
+  },
+  "settings_tab_general": {
+    "message": "General",
+    "description": "General settings tab"
+  },
+  
+  "settings_blinko_title": {
+    "message": "Blinko Service Configuration",
+    "description": "Blinko service configuration"
+  },
+  "settings_blinko_apiUrl": {
+    "message": "API URL",
+    "description": "API URL label"
+  },
+  "settings_blinko_apiUrl_placeholder": {
+    "message": "https://your-blinko-server.com",
+    "description": "API URL placeholder"
+  },
+  "settings_blinko_apiUrl_hint": {
+    "message": "Your Blinko server address",
+    "description": "API URL hint"
+  },
+  "settings_blinko_auth": {
+    "message": "Authorization Token",
+    "description": "Authorization token label"
+  },
+  "settings_blinko_auth_placeholder": {
+    "message": "Bearer token",
+    "description": "Authorization token placeholder"
+  },
+  "settings_blinko_auth_hint": {
+    "message": "Blinko access token",
+    "description": "Authorization token hint"
+  },
+  
+  "settings_openai_title": {
+    "message": "OpenAI Service Configuration",
+    "description": "OpenAI service configuration"
+  },
+  "settings_openai_baseUrl": {
+    "message": "Base URL",
+    "description": "Base URL label"
+  },
+  "settings_openai_baseUrl_placeholder": {
+    "message": "https://api.openai.com/v1",
+    "description": "Base URL placeholder"
+  },
+  "settings_openai_baseUrl_hint": {
+    "message": "API base URL (leave blank for default)",
+    "description": "Base URL hint"
+  },
+  "settings_openai_apiKey": {
+    "message": "API Key",
+    "description": "API Key label"
+  },
+  "settings_openai_apiKey_placeholder": {
+    "message": "sk-...",
+    "description": "API Key placeholder"
+  },
+  "settings_openai_apiKey_hint": {
+    "message": "OpenAI API key",
+    "description": "API Key hint"
+  },
+  "settings_openai_model": {
+    "message": "Model",
+    "description": "Model label"
+  },
+  "settings_openai_model_placeholder": {
+    "message": "gpt-3.5-turbo",
+    "description": "Model placeholder"
+  },
+  "settings_openai_model_hint": {
+    "message": "Model name (leave blank for default)",
+    "description": "Model hint"
+  },
+  
+  "settings_templates_title": {
+    "message": "Prompt Template Management",
+    "description": "Template management title"
+  },
+  "settings_templates_defaultSection": {
+    "message": "Default Template",
+    "description": "Default template section"
+  },
+  "settings_templates_defaultLabel": {
+    "message": "Select Default Template",
+    "description": "Select default template"
+  },
+  "settings_templates_defaultHint": {
+    "message": "Used when no domain rule matches",
+    "description": "Default template hint"
+  },
+  "settings_templates_listSection": {
+    "message": "Template List",
+    "description": "Template list section"
+  },
+  "settings_templates_currentLabel": {
+    "message": "Current Template",
+    "description": "Current template label"
+  },
+  "settings_templates_contentLabel": {
+    "message": "Template Content",
+    "description": "Template content label"
+  },
+  "settings_templates_contentPlaceholder": {
+    "message": "Enter system prompt template...\\nExample: I am a professional content analyst, skilled at extracting key information from web pages...",
+    "description": "Template content placeholder"
+  },
+  "settings_templates_contentHint": {
+    "message": "Tip: The template will be used as a system prompt, web content will be sent as user message automatically. Click \"AI Optimize\" to automatically improve the template",
+    "description": "Template content hint"
+  },
+  "settings_templates_btnOptimize": {
+    "message": "AI Optimize",
+    "description": "AI optimize button"
+  },
+  "settings_templates_btnSave": {
+    "message": "Save Template",
+    "description": "Save template button"
+  },
+  "settings_templates_btnDelete": {
+    "message": "Delete Template",
+    "description": "Delete template button"
+  },
+  "settings_templates_newSection": {
+    "message": "New Template",
+    "description": "New template section"
+  },
+  "settings_templates_newName": {
+    "message": "Template Name",
+    "description": "Template name label"
+  },
+  "settings_templates_newPlaceholder": {
+    "message": "Enter new template name",
+    "description": "New template name placeholder"
+  },
+  "settings_templates_btnAdd": {
+    "message": "Add Template",
+    "description": "Add template button"
+  },
+  "settings_templates_domainSection": {
+    "message": "Domain Specific Rules",
+    "description": "Domain specific rules section"
+  },
+  "settings_templates_domainPattern": {
+    "message": "Domain Pattern",
+    "description": "Domain pattern label"
+  },
+  "settings_templates_domainPatternPlaceholder": {
+    "message": "example.com or ^https://github\\.com/.*",
+    "description": "Domain pattern placeholder"
+  },
+  "settings_templates_domainPatternHint": {
+    "message": "Supports domain, full URL or regex",
+    "description": "Domain pattern hint"
+  },
+  "settings_templates_domainType": {
+    "message": "Rule Type",
+    "description": "Rule type label"
+  },
+  "settings_templates_domainType_domain": {
+    "message": "Domain Match",
+    "description": "Domain match option"
+  },
+  "settings_templates_domainType_regex": {
+    "message": "Regular Expression",
+    "description": "Regex match option"
+  },
+  "settings_templates_domainType_exact": {
+    "message": "Exact URL",
+    "description": "Exact URL option"
+  },
+  "settings_templates_domainTemplate": {
+    "message": "Template",
+    "description": "Corresponding template label"
+  },
+  "settings_templates_btnAddRule": {
+    "message": "Add Rule",
+    "description": "Add rule button"
+  },
+  "settings_templates_rulesList": {
+    "message": "Configured Rules",
+    "description": "Configured rules label"
+  },
+  
+  "settings_tags_title": {
+    "message": "Scenario Tag Configuration",
+    "description": "Scenario tags configuration"
+  },
+  "settings_tags_summary": {
+    "message": "Summary Tag",
+    "description": "Summary scenario tag"
+  },
+  "settings_tags_summaryPlaceholder": {
+    "message": "#web/summary",
+    "description": "Summary tag placeholder"
+  },
+  "settings_tags_summaryHint": {
+    "message": "Tag automatically added when using AI summary",
+    "description": "Summary tag hint"
+  },
+  "settings_tags_selection": {
+    "message": "Selection Tag",
+    "description": "Selection scenario tag"
+  },
+  "settings_tags_selectionPlaceholder": {
+    "message": "#web/selection",
+    "description": "Selection tag placeholder"
+  },
+  "settings_tags_selectionHint": {
+    "message": "Tag automatically added when saving selection",
+    "description": "Selection tag hint"
+  },
+  "settings_tags_image": {
+    "message": "Image Tag",
+    "description": "Image scenario tag"
+  },
+  "settings_tags_imagePlaceholder": {
+    "message": "#web/image",
+    "description": "Image tag placeholder"
+  },
+  "settings_tags_imageHint": {
+    "message": "Tag automatically added when saving images",
+    "description": "Image tag hint"
+  },
+  "settings_tags_clipping": {
+    "message": "Clipping Tag",
+    "description": "Clipping scenario tag"
+  },
+  "settings_tags_clippingPlaceholder": {
+    "message": "#web/clipping",
+    "description": "Clipping tag placeholder"
+  },
+  "settings_tags_clippingHint": {
+    "message": "Tag automatically added when clipping web pages",
+    "description": "Clipping tag hint"
+  },
+  "settings_tags_domainTitle": {
+    "message": "Domain Specific Tags",
+    "description": "Domain specific tags title"
+  },
+  "settings_tags_domainDesc": {
+    "message": "Set exclusive tags for different domains/websites, automatically applied to all scenarios (clipping, summary, selection, image)",
+    "description": "Domain specific tags description"
+  },
+  "settings_tags_domainAddLabel": {
+    "message": "Add Domain Tag Rule",
+    "description": "Add domain tag rule label"
+  },
+  "settings_tags_domainPattern": {
+    "message": "Domain Pattern",
+    "description": "Domain pattern label"
+  },
+  "settings_tags_domainPatternPlaceholder": {
+    "message": "e.g., github.com",
+    "description": "Domain pattern placeholder"
+  },
+  "settings_tags_domainType": {
+    "message": "Match Type",
+    "description": "Match type label"
+  },
+  "settings_tags_domainType_domain": {
+    "message": "Domain",
+    "description": "Domain match option"
+  },
+  "settings_tags_domainType_regex": {
+    "message": "Regular Expression",
+    "description": "Regex option"
+  },
+  "settings_tags_domainType_exact": {
+    "message": "Exact URL",
+    "description": "Exact URL option"
+  },
+  "settings_tags_domainTags": {
+    "message": "Tags",
+    "description": "Tags label"
+  },
+  "settings_tags_domainTagsPlaceholder": {
+    "message": "Tags (e.g., #dev #tech)",
+    "description": "Tags placeholder"
+  },
+  "settings_tags_btnAddRule": {
+    "message": "Add Rule",
+    "description": "Add rule button"
+  },
+  "settings_tags_advancedOptions": {
+    "message": "Advanced Options",
+    "description": "Advanced options"
+  },
+  "settings_tags_matchStrategy": {
+    "message": "Multi-Rule Match Strategy",
+    "description": "Multi-rule match strategy"
+  },
+  "settings_tags_matchStrategy_first": {
+    "message": "Use first match only",
+    "description": "First match only"
+  },
+  "settings_tags_matchStrategy_merge": {
+    "message": "Merge all matching tags",
+    "description": "Merge all matches"
+  },
+  "settings_tags_matchStrategyHint": {
+    "message": "How to handle multiple rule matches",
+    "description": "Match strategy hint"
+  },
+  
+  "settings_storage_title": {
+    "message": "Image Storage Configuration",
+    "description": "Image storage configuration"
+  },
+  "settings_storage_keepOriginal": {
+    "message": "Keep Original Image Link",
+    "description": "Keep original image link"
+  },
+  "settings_storage_keepOriginal_yes": {
+    "message": "Yes",
+    "description": "Yes option"
+  },
+  "settings_storage_keepOriginal_no": {
+    "message": "No (Upload to S3)",
+    "description": "No, upload to S3"
+  },
+  "settings_storage_s3Title": {
+    "message": "S3 Storage Configuration",
+    "description": "S3 storage configuration"
+  },
+  "settings_storage_s3AccessKey": {
+    "message": "ACCESS_KEY",
+    "description": "S3 access key label"
+  },
+  "settings_storage_s3AccessKeyPlaceholder": {
+    "message": "Access key",
+    "description": "Access key placeholder"
+  },
+  "settings_storage_s3SecretKey": {
+    "message": "SECRET_KEY",
+    "description": "S3 secret key label"
+  },
+  "settings_storage_s3SecretKeyPlaceholder": {
+    "message": "Secret key",
+    "description": "Secret key placeholder"
+  },
+  "settings_storage_s3Endpoint": {
+    "message": "ENDPOINT",
+    "description": "S3 endpoint label"
+  },
+  "settings_storage_s3EndpointPlaceholder": {
+    "message": "https://s3.amazonaws.com",
+    "description": "Endpoint placeholder"
+  },
+  "settings_storage_s3Region": {
+    "message": "REGION",
+    "description": "S3 region label"
+  },
+  "settings_storage_s3RegionPlaceholder": {
+    "message": "us-east-1",
+    "description": "Region placeholder"
+  },
+  "settings_storage_s3Bucket": {
+    "message": "BUCKET",
+    "description": "S3 bucket label"
+  },
+  "settings_storage_s3BucketPlaceholder": {
+    "message": "my-bucket",
+    "description": "Bucket placeholder"
+  },
+  "settings_storage_s3Cdn": {
+    "message": "CDN (Optional)",
+    "description": "CDN label"
+  },
+  "settings_storage_s3CdnPlaceholder": {
+    "message": "https://cdn.example.com",
+    "description": "CDN placeholder"
+  },
+  "settings_storage_s3CdnHint": {
+    "message": "Use CDN for faster access",
+    "description": "CDN hint"
+  },
+  "settings_storage_s3CustomPath": {
+    "message": "Custom Path (Optional)",
+    "description": "Custom path label"
+  },
+  "settings_storage_s3CustomPathPlaceholder": {
+    "message": "blinko/images",
+    "description": "Custom path placeholder"
+  },
+  "settings_storage_s3CustomPathHint": {
+    "message": "Storage path prefix",
+    "description": "Custom path hint"
+  },
+  "settings_storage_s3Acl": {
+    "message": "Image Access Control",
+    "description": "Image access control"
+  },
+  "settings_storage_s3Acl_public": {
+    "message": "Public Access (Recommended)",
+    "description": "Public access option"
+  },
+  "settings_storage_s3Acl_private": {
+    "message": "Private Access",
+    "description": "Private access option"
+  },
+  "settings_storage_s3AclHint": {
+    "message": "Public: Image URLs are permanent; Private: Requires authorization, URLs expire",
+    "description": "ACL hint"
+  },
+  "settings_storage_s3PresignedExpiry": {
+    "message": "Pre-signed URL Expiry",
+    "description": "Presigned URL expiry"
+  },
+  "settings_storage_s3Expiry_30": {
+    "message": "1 month",
+    "description": "1 month option"
+  },
+  "settings_storage_s3Expiry_180": {
+    "message": "6 months",
+    "description": "6 months option"
+  },
+  "settings_storage_s3Expiry_365": {
+    "message": "1 year",
+    "description": "1 year option"
+  },
+  "settings_storage_s3Expiry_1825": {
+    "message": "5 years",
+    "description": "5 years option"
+  },
+  "settings_storage_s3Expiry_3650": {
+    "message": "10 years (Recommended)",
+    "description": "10 years option"
+  },
+  "settings_storage_s3ExpiryHint": {
+    "message": "⚠️ Image links will expire after this period, longer duration recommended",
+    "description": "Expiry hint"
+  },
+  "settings_storage_btnValidate": {
+    "message": "Validate S3 Config",
+    "description": "Validate S3 config button"
+  },
+  
+  "settings_general_title": {
+    "message": "General Settings",
+    "description": "General settings title"
+  },
+  "settings_general_linkSection": {
+    "message": "Web Link Options",
+    "description": "Web link options section"
+  },
+  "settings_general_linkSummary": {
+    "message": "Include web link when summarizing",
+    "description": "Include link when summarizing"
+  },
+  "settings_general_linkSelection": {
+    "message": "Include web link when saving selection",
+    "description": "Include link when saving selection"
+  },
+  "settings_general_linkImage": {
+    "message": "Include web link when saving images",
+    "description": "Include link when saving images"
+  },
+  "settings_general_linkQuickNote": {
+    "message": "Include web link in quick notes",
+    "description": "Include link in quick notes"
+  },
+  "settings_general_lazyLoadSection": {
+    "message": "Lazy Load Trigger Settings",
+    "description": "Lazy load trigger settings section"
+  },
+  "settings_general_lazyLoadEnable": {
+    "message": "Enable Lazy Load Trigger",
+    "description": "Enable lazy load trigger"
+  },
+  "settings_general_lazyLoadHint": {
+    "message": "Automatically scroll the page to trigger lazy-loaded images before extraction. Page will scroll automatically and restore position after completion.",
+    "description": "Lazy load trigger hint"
+  },
+  "settings_general_lazyLoadSpeed": {
+    "message": "Scroll Speed",
+    "description": "Scroll speed label"
+  },
+  "settings_general_lazyLoadSpeed_fast": {
+    "message": "Fast (about 3-5s)",
+    "description": "Fast speed option"
+  },
+  "settings_general_lazyLoadSpeed_medium": {
+    "message": "Medium (about 5-8s, Recommended)",
+    "description": "Medium speed option"
+  },
+  "settings_general_lazyLoadSpeed_slow": {
+    "message": "Slow (about 8-12s)",
+    "description": "Slow speed option"
+  },
+  "settings_general_lazyLoadSpeedHint": {
+    "message": "Slower speeds ensure more images are triggered",
+    "description": "Scroll speed hint"
+  },
+  "settings_general_lazyLoadMaxWait": {
+    "message": "Max Wait Time",
+    "description": "Max wait time label"
+  },
+  "settings_general_lazyLoadMaxWait_5": {
+    "message": "5 seconds",
+    "description": "5 seconds option"
+  },
+  "settings_general_lazyLoadMaxWait_10": {
+    "message": "10 seconds (Recommended)",
+    "description": "10 seconds option"
+  },
+  "settings_general_lazyLoadMaxWait_15": {
+    "message": "15 seconds",
+    "description": "15 seconds option"
+  },
+  "settings_general_lazyLoadMaxWaitHint": {
+    "message": "Auto-stop after this timeout",
+    "description": "Max wait time hint"
+  },
+  "settings_general_languageSection": {
+    "message": "Language Settings",
+    "description": "Language settings section"
+  },
+  "settings_general_language": {
+    "message": "Interface Language",
+    "description": "Interface language label"
+  },
+  "settings_general_language_auto": {
+    "message": "Auto (Follow Browser)",
+    "description": "Auto language option"
+  },
+  "settings_general_language_zhCN": {
+    "message": "中文（简体）",
+    "description": "Simplified Chinese option"
+  },
+  "settings_general_language_en": {
+    "message": "English",
+    "description": "English option"
+  },
+  "settings_general_languageHint": {
+    "message": "Refresh page to apply language change",
+    "description": "Language change hint"
+  },
+  "settings_general_btnRefresh": {
+    "message": "Refresh Now",
+    "description": "Refresh now button"
+  },
+  "settings_general_configSection": {
+    "message": "Configuration Management",
+    "description": "Configuration management section"
+  },
+  
+  "common_selectPlaceholder": {
+    "message": "Please select...",
+    "description": "Select placeholder"
+  },
+  
+  "background_contextMenu_saveSelection": {
+    "message": "Save Selection to Blinko",
+    "description": "Save selection context menu"
+  },
+  "background_contextMenu_saveImage": {
+    "message": "Save Image to Blinko",
+    "description": "Save image context menu"
+  },
+  "background_contextMenu_saveLink": {
+    "message": "Save Link to Blinko",
+    "description": "Save link context menu"
+  },
+  
+  "background_notification_saveSuccess": {
+    "message": "Save Success",
+    "description": "Save success notification title"
+  },
+  "background_notification_saveFailed": {
+    "message": "Save Failed",
+    "description": "Save failed notification title"
+  },
+  "background_notification_error": {
+    "message": "Error",
+    "description": "Error notification title"
+  },
+  "background_notification_selectionSaved": {
+    "message": "Selection saved to Blinko",
+    "description": "Selection saved message"
+  },
+  "background_notification_imageSaved": {
+    "message": "Image saved to Blinko",
+    "description": "Image saved message"
+  },
+  "background_notification_linkSaved": {
+    "message": "Link saved to Blinko",
+    "description": "Link saved message"
+  },
+  "background_notification_noSelection": {
+    "message": "No text selected",
+    "description": "No selection error"
+  },
+  "background_notification_noImageUrl": {
+    "message": "Cannot get image URL",
+    "description": "Cannot get image URL error"
+  },
+  "background_notification_noLinkUrl": {
+    "message": "Cannot get link URL",
+    "description": "Cannot get link URL error"
+  },
+  
+  "error_fillComplete": {
+    "message": "Please fill in complete API configuration",
+    "description": "Please fill in complete API config"
+  },
+  "error_authFailed": {
+    "message": "Authorization failed, please check your token",
+    "description": "Authorization failed"
+  },
+  "error_connectionFailed": {
+    "message": "Connection failed: HTTP $STATUS$",
+    "description": "Connection failed with status",
+    "placeholders": {
+      "status": {"content": "$1"}
+    }
+  },
+  "error_networkFailed": {
+    "message": "Network connection failed, please check API_URL: $ERROR$",
+    "description": "Network connection failed",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  "error_networkError": {
+    "message": "Network error: $ERROR$",
+    "description": "Network error",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  "error_apiKeyInvalid": {
+    "message": "API key validation failed, please check your key",
+    "description": "API key validation failed"
+  },
+  "error_modelNotAvailable": {
+    "message": "Model not available, please check model name",
+    "description": "Model not available"
+  },
+  "error_apiQuotaExceeded": {
+    "message": "API quota exceeded",
+    "description": "API quota exceeded"
+  },
+  "error_timeout": {
+    "message": "Request timeout, please retry",
+    "description": "Request timeout"
+  },
+  "error_templateEmpty": {
+    "message": "Template content is empty, cannot optimize",
+    "description": "Template content empty"
+  },
+  "error_noSummaryGenerated": {
+    "message": "Failed to generate summary",
+    "description": "No summary generated"
+  },
+  "error_confirmDelete": {
+    "message": "Are you sure you want to delete template \"$NAME$\"?",
+    "description": "Confirm delete template",
+    "placeholders": {
+      "name": {"content": "$1"}
+    }
+  },
+  "error_confirmDeleteRule": {
+    "message": "Are you sure you want to delete this rule?",
+    "description": "Confirm delete rule"
+  },
+  "error_templateNameEmpty": {
+    "message": "Template name cannot be empty",
+    "description": "Template name cannot be empty"
+  },
+  "error_templateExists": {
+    "message": "Template name already exists",
+    "description": "Template name already exists"
+  },
+  "error_patternEmpty": {
+    "message": "Domain pattern cannot be empty",
+    "description": "Domain pattern cannot be empty"
+  },
+  "error_templateNotSelected": {
+    "message": "Please select a template",
+    "description": "Please select template"
+  },
+  "error_invalidJson": {
+    "message": "Invalid configuration file format",
+    "description": "Invalid JSON format"
+  },
+  "error_importFailed": {
+    "message": "Import failed: $ERROR$",
+    "description": "Import failed",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  
+  "settings_templates_error_nameEmpty": {
+    "message": "Please enter template name",
+    "description": "Template name cannot be empty"
+  },
+  "settings_templates_error_nameExists": {
+    "message": "Template name already exists, please use a different name",
+    "description": "Template name already exists"
+  },
+  "settings_templates_success_created": {
+    "message": "Template \"$NAME$\" created",
+    "description": "Template created successfully",
+    "placeholders": {
+      "name": {"content": "$1"}
+    }
+  },
+  "settings_templates_error_noSelection": {
+    "message": "Please select a template to save",
+    "description": "Please select template to save"
+  },
+  "settings_templates_error_noSelectionDelete": {
+    "message": "Please select a template to delete",
+    "description": "Please select template to delete"
+  },
+  "settings_templates_success_deleted": {
+    "message": "Template \"$NAME$\" deleted",
+    "description": "Template deleted",
+    "placeholders": {
+      "name": {"content": "$1"}
+    }
+  },
+  "settings_templates_error_contentEmpty": {
+    "message": "Template content is empty, cannot optimize",
+    "description": "Template content empty for optimization"
+  },
+  "settings_templates_error_noOpenAI": {
+    "message": "Please configure OpenAI in the OpenAI Config tab first",
+    "description": "OpenAI not configured"
+  },
+  "settings_templates_loading_optimizing": {
+    "message": "Optimizing template...",
+    "description": "Optimizing template message"
+  },
+  "settings_templates_btn_optimizing": {
+    "message": "Optimizing...",
+    "description": "Optimizing button text"
+  },
+  "settings_templates_success_optimized": {
+    "message": "Optimization completed, please review and save",
+    "description": "Optimization completed"
+  },
+  "settings_templates_error_optimizeFailed": {
+    "message": "Optimization failed: $ERROR$",
+    "description": "Optimization failed",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  "settings_templates_success_defaultUpdated": {
+    "message": "Default template updated",
+    "description": "Default template updated"
+  },
+  "settings_templates_error_patternEmpty": {
+    "message": "Please enter domain pattern",
+    "description": "Domain pattern empty"
+  },
+  "settings_templates_error_noTemplateSelected": {
+    "message": "Please select a template",
+    "description": "No template selected for rule"
+  },
+  "settings_templates_success_ruleAdded": {
+    "message": "Domain rule added",
+    "description": "Domain rule added"
+  },
+  "settings_templates_success_ruleDeleted": {
+    "message": "Rule deleted",
+    "description": "Rule deleted"
+  },
+  "settings_templates_emptyList": {
+    "message": "No domain rules configured",
+    "description": "Empty domain rules list"
+  },
+  "settings_templates_ruleType_domain": {
+    "message": "Domain",
+    "description": "Domain rule type display"
+  },
+  "settings_templates_ruleType_regex": {
+    "message": "Regex",
+    "description": "Regex rule type display"
+  },
+  "settings_templates_ruleType_exact": {
+    "message": "Exact URL",
+    "description": "Exact URL rule type display"
+  },
+  "settings_templates_confirmDelete": {
+    "message": "Are you sure you want to delete template \"$NAME$\"?",
+    "description": "Confirm delete template dialog",
+    "placeholders": {
+      "name": {"content": "$1"}
+    }
+  },
+  "settings_templates_defaultName": {
+    "message": "Default Template",
+    "description": "Default template name"
+  },
+  "settings_templates_defaultContent": {
+    "message": "I am a professional content analyst, skilled at quickly understanding and extracting core information from web pages. I focus on the main points, key data, and important conclusions of articles, and summarize them in a concise and clear manner.",
+    "description": "Default template content"
+  },
+  
+  "settings_tags_error_patternEmpty": {
+    "message": "Please enter domain pattern",
+    "description": "Domain pattern empty for tags"
+  },
+  "settings_tags_error_tagsEmpty": {
+    "message": "Please enter tags",
+    "description": "Tags field empty"
+  },
+  "settings_tags_success_ruleAdded": {
+    "message": "Domain tag rule added",
+    "description": "Domain tag rule added"
+  },
+  "settings_tags_success_ruleDeleted": {
+    "message": "Rule deleted",
+    "description": "Tag rule deleted"
+  },
+  "settings_tags_success_strategyUpdated": {
+    "message": "Match strategy updated",
+    "description": "Match strategy updated"
+  },
+  "settings_tags_emptyList": {
+    "message": "No domain tag rules configured",
+    "description": "Empty domain tag rules list"
+  },
+  
+  "settings_storage_loading_validating": {
+    "message": "Validating S3 configuration...",
+    "description": "Validating S3 config message"
+  },
+  
+  "settings_general_success_exported": {
+    "message": "Configuration exported",
+    "description": "Config exported successfully"
+  },
+  "settings_general_error_exportFailed": {
+    "message": "Export failed: $ERROR$",
+    "description": "Export failed",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  "settings_general_confirmImport": {
+    "message": "Import will overwrite current configuration, continue?",
+    "description": "Confirm import dialog"
+  },
+  "settings_general_success_imported": {
+    "message": "Configuration imported successfully, page will refresh",
+    "description": "Config imported successfully"
+  },
+  
+  "api_error_configIncomplete": {
+    "message": "Please fill in complete API configuration",
+    "description": "API config incomplete"
+  },
+  "api_error_authFailed": {
+    "message": "Authorization failed, please check your token",
+    "description": "Authorization failed"
+  },
+  "api_error_httpStatus": {
+    "message": "Connection failed: HTTP $STATUS$",
+    "description": "HTTP status error",
+    "placeholders": {
+      "status": {"content": "$1"}
+    }
+  },
+  "api_error_networkConnection": {
+    "message": "Network connection failed, please check API_URL: $ERROR$",
+    "description": "Network connection failed",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  "api_success_connected": {
+    "message": "Connected successfully",
+    "description": "Connected successfully"
+  },
+  "api_success_connectedWithResponse": {
+    "message": "Connected successfully, response: $TEXT$",
+    "description": "Connected with response",
+    "placeholders": {
+      "text": {"content": "$1"}
+    }
+  },
+  "api_error_noBlinkoConfig": {
+    "message": "Please configure Blinko connection in settings first",
+    "description": "Blinko not configured"
+  },
+  "api_error_authFailedCheck": {
+    "message": "Authorization failed, please check configuration",
+    "description": "Auth failed check config"
+  },
+  "api_error_saveHttpStatus": {
+    "message": "Save failed: HTTP $STATUS$",
+    "description": "Save HTTP error",
+    "placeholders": {
+      "status": {"content": "$1"}
+    }
+  },
+  "api_success_noteSaved": {
+    "message": "Saved successfully",
+    "description": "Note saved successfully"
+  },
+  "api_error_noApiKey": {
+    "message": "Please fill in API Key",
+    "description": "No API key"
+  },
+  "api_error_connectionHttpStatus": {
+    "message": "Connection failed: HTTP $STATUS$",
+    "description": "Connection HTTP error",
+    "placeholders": {
+      "status": {"content": "$1"}
+    }
+  },
+  "api_error_cannotConnect": {
+    "message": "Cannot connect to API service, please check base_url: $ERROR$",
+    "description": "Cannot connect to API",
+    "placeholders": {
+      "error": {"content": "$1"}
+    }
+  },
+  "api_error_summarizeHttpStatus": {
+    "message": "Summarization failed: HTTP $STATUS$",
+    "description": "Summarize HTTP error",
+    "placeholders": {
+      "status": {"content": "$1"}
+    }
+  },
+  "api_success_summarized": {
+    "message": "Summary generated successfully",
+    "description": "Summarized successfully"
+  },
+  "api_error_optimizeHttpStatus": {
+    "message": "Optimization failed: HTTP $STATUS$",
+    "description": "Optimize HTTP error",
+    "placeholders": {
+      "status": {"content": "$1"}
+    }
+  },
+  "api_success_templateOptimized": {
+    "message": "Template optimized successfully",
+    "description": "Template optimized"
+  },
+  
+  "s3_error_configIncomplete": {
+    "message": "Please fill in all required S3 configuration fields",
+    "description": "S3 config incomplete"
+  },
+  "s3_error_endpointInvalid": {
+    "message": "Invalid ENDPOINT format",
+    "description": "Invalid endpoint format"
+  },
+  "s3_success_connected": {
+    "message": "S3 connection successful! Bucket is accessible",
+    "description": "S3 connected successfully"
+  },
+  "s3_error_accessKeyFailed": {
+    "message": "Access key validation failed, please check ACCESS_KEY and SECRET_KEY",
+    "description": "Access key validation failed"
+  },
+  "s3_error_bucketNotFound": {
+    "message": "Bucket does not exist, please check BUCKET name",
+    "description": "Bucket not found"
+  },
+  "s3_error_regionError": {
+    "message": "Region configuration error, please check REGION setting",
+    "description": "Region configuration error"
+  },
+  "s3_error_endpointUnreachable": {
+    "message": "Cannot connect to S3 endpoint, please check ENDPOINT and network connection",
+    "description": "Cannot reach S3 endpoint"
+  },
+  "s3_error_noPermission": {
+    "message": "No upload permission, please check IAM policy",
+    "description": "No upload permission"
+  },
+  "s3_error_uploadFailed": {
+    "message": "Upload failed, please check network connection",
+    "description": "Upload failed"
+  },
+  "s3_error_uploadFailedGeneric": {
+    "message": "Upload failed",
+    "description": "Generic upload failed"
+  },
+  "s3_success_uploaded": {
+    "message": "Uploaded successfully",
+    "description": "Uploaded successfully"
+  },
+  
+  "validation_templateEmpty": {
+    "message": "Template content cannot be empty",
+    "description": "Template content cannot be empty"
+  },
+  "validation_templateTooLong": {
+    "message": "Template content is too long, please keep it under 5000 characters",
+    "description": "Template content too long"
+  },
+  "validation_templateValid": {
+    "message": "Template validation passed",
+    "description": "Template validation passed"
+  },
+  "validation_patternEmpty": {
+    "message": "Domain pattern cannot be empty",
+    "description": "Domain pattern cannot be empty"
+  },
+  "validation_regexValid": {
+    "message": "Regular expression is valid",
+    "description": "Regex is valid"
+  },
+  "validation_regexInvalid": {
+    "message": "Invalid regular expression",
+    "description": "Invalid regex"
+  },
+  "validation_urlValid": {
+    "message": "URL format is valid",
+    "description": "URL format valid"
+  },
+  "validation_urlInvalid": {
+    "message": "Invalid URL format",
+    "description": "Invalid URL format"
+  },
+  "validation_domainRuleValid": {
+    "message": "Domain rule is valid",
+    "description": "Domain rule valid"
+  },
+  
+  "draft_restore_prompt": {
+    "message": "Unfinished draft detected",
+    "description": "Draft restore prompt"
+  },
+  "draft_btn_restore": {
+    "message": "Restore",
+    "description": "Restore draft button"
+  },
+  "draft_btn_ignore": {
+    "message": "Ignore",
+    "description": "Ignore draft button"
+  },
+  "draft_btn_save": {
+    "message": "Save as Draft",
+    "description": "Save as draft button"
+  },
+  "draft_btn_manage": {
+    "message": "Manage Drafts",
+    "description": "Manage drafts button"
+  },
+  "draft_btn_load": {
+    "message": "Load",
+    "description": "Load draft button"
+  },
+  "draft_btn_delete": {
+    "message": "Delete",
+    "description": "Delete draft button"
+  },
+  "draft_auto_saved": {
+    "message": "Auto saved",
+    "description": "Auto saved indicator"
+  },
+  "draft_manager_title": {
+    "message": "Draft Manager",
+    "description": "Draft manager modal title"
+  },
+  "draft_empty_message": {
+    "message": "No drafts",
+    "description": "Empty drafts message"
+  },
+  "draft_empty_hint": {
+    "message": "Click 'Save as Draft' button to save current content",
+    "description": "Empty drafts hint"
+  },
+  "draft_restored": {
+    "message": "Draft restored",
+    "description": "Draft restored message"
+  },
+  "draft_ignored": {
+    "message": "Draft ignored",
+    "description": "Draft ignored message"
+  },
+  "draft_loaded": {
+    "message": "Draft loaded",
+    "description": "Draft loaded message"
+  },
+  "draft_error_empty": {
+    "message": "Content cannot be empty",
+    "description": "Draft empty error"
+  },
+  "draft_prompt_name": {
+    "message": "Please enter draft name",
+    "description": "Draft name prompt"
+  },
+  "draft_confirm_delete": {
+    "message": "Delete this draft?",
+    "description": "Delete draft confirmation"
+  },
+  "draft_just_now": {
+    "message": "Just now",
+    "description": "Just now time"
+  },
+  "draft_minutes_ago": {
+    "message": "$1 minutes ago",
+    "description": "Minutes ago",
+    "placeholders": {
+      "minutes": {"content": "$1"}
+    }
+  },
+  "draft_hours_ago": {
+    "message": "$1 hours ago",
+    "description": "Hours ago",
+    "placeholders": {
+      "hours": {"content": "$1"}
+    }
+  },
+  
+  "queue_enqueued_network_error": {
+    "message": "Network unavailable, added to offline queue",
+    "description": "Enqueued due to network error"
+  },
+  "queue_enqueued_server_error": {
+    "message": "Server error, added to offline queue",
+    "description": "Enqueued due to server error"
+  },
+  "background_notification_queued": {
+    "message": "Added to offline queue",
+    "description": "Queued notification title"
+  },
+  "background_notification_willRetry": {
+    "message": "Will retry automatically when network recovers",
+    "description": "Will retry notification"
+  },
+  "background_notification_processing": {
+    "message": "Processing",
+    "description": "Processing notification"
+  },
+  
+  "context_menu_save_selection": {
+    "message": "📝 Save Selection",
+    "description": "Context menu save selection"
+  },
+  "context_menu_save_image": {
+    "message": "🖼️ Save Image",
+    "description": "Context menu save image"
+  },
+  "context_menu_save_link": {
+    "message": "🔗 Save Link",
+    "description": "Context menu save link"
+  },
+  "context_menu_save_full_page": {
+    "message": "📄 Save Full Page",
+    "description": "Context menu save full page"
+  },
+  "context_menu_save_screenshot": {
+    "message": "📸 Save Screenshot",
+    "description": "Context menu save screenshot"
+  },
+  "context_menu_use_template": {
+    "message": "🎯 Use Template",
+    "description": "Context menu use template"
+  },
+  "context_menu_extracting_page": {
+    "message": "Extracting page content...",
+    "description": "Extracting page message"
+  },
+  "context_menu_capturing_screenshot": {
+    "message": "Capturing screenshot...",
+    "description": "Capturing screenshot message"
+  },
+  "context_menu_full_page_saved": {
+    "message": "Page saved to Blinko",
+    "description": "Full page saved message"
+  },
+  "context_menu_screenshot_saved": {
+    "message": "Screenshot saved to Blinko",
+    "description": "Screenshot saved message"
+  },
+  "context_menu_screenshot_not_supported": {
+    "message": "Screenshot not supported on this page",
+    "description": "Screenshot not supported error"
+  }
+}
+
