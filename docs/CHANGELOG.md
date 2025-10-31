@@ -5,6 +5,21 @@
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.0.0/)，
 版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [未发布]
+
+### 新增
+- GitHub Actions 自动发布功能
+  - 监听 manifest.json 变更自动触发发布
+  - 跨平台兼容的打包脚本 (archiver)
+  - 自动创建 GitHub Release 和上传 zip 文件
+  - 完整的 Release Notes 生成
+
+### 技术改进
+- 新增 scripts/get-version.js - 版本号提取脚本
+- 新增 scripts/pack.js - 跨平台打包脚本
+- 替换 PowerShell 打包命令为 Node.js 脚本
+- 添加 archiver 依赖用于跨平台压缩
+
 ## [1.1.0] - 2025-10-30
 
 ### 新增 - 可靠性功能增强

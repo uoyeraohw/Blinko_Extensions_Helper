@@ -1,0 +1,96 @@
+name: Release
+
+# 触发条件：推送到 main 分支且 manifest.json 变更
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'manifest.json'
+
+# 权限设置
+permissions:
+  contents: write  # 需要写权限来创建 Release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. 检出代码
+      - name: 检出代码
+        uses: actions/checkout@v4
+      
+      # 2. 设置 Node.js 环境
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      # 3. 读取版本号
+      - name: 读取版本号
+        id: get_version
+        run: |
+          VERSION=$(node scripts/get-version.js)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "📌 检测到版本: v$VERSION"
+      
+      # 4. 安装依赖
+      - name: 安装依赖
+        run: npm ci
+      
+      # 5. 执行打包
+      - name: 打包扩展
+        run: npm run pack
+      
+      # 6. 验证打包文件
+      - name: 验证打包文件
+        run: |
+          if [ ! -f "blinko-extension.zip" ]; then
+            echo "❌ 打包文件不存在"
+            exit 1
+          fi
+          FILE_SIZE=$(stat -c%s "blinko-extension.zip")
+          if [ $FILE_SIZE -lt 1000 ]; then
+            echo "❌ 打包文件太小，可能打包失败"
+            exit 1
+          fi
+          echo "✓ 打包文件验证通过: $FILE_SIZE bytes"
+      
+      # 7. 创建 GitHub Release
+      - name: 创建 Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ steps.get_version.outputs.version }}
+          name: Release v${{ steps.get_version.outputs.version }}
+          draft: false
+          prerelease: false
+          files: blinko-extension.zip
+          body: |
+            ## 🎉 Blinko 网页剪藏助手 v${{ steps.get_version.outputs.version }}
+            
+            ### 📥 下载安装
+            
+            1. 下载下方的 `blinko-extension.zip` 文件
+            2. 解压到本地目录
+            3. 打开 Chrome 浏览器，访问 `chrome://extensions/`
+            4. 开启"开发者模式"
+            5. 点击"加载已解压的扩展程序"
+            6. 选择解压后的目录
+            
+            ### 📝 更新内容
+            
+            查看详细更新日志：[CHANGELOG.md](https://github.com/${{ github.repository }}/blob/main/docs/CHANGELOG.md)
+            
+            ### 🐛 问题反馈
+            
+            如有问题请访问 [Issues](https://github.com/${{ github.repository }}/issues)
+            
+            ---
+            
+            **发布时间**：${{ github.event.head_commit.timestamp }}  
+            **提交信息**：${{ github.event.head_commit.message }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

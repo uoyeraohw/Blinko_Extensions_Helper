@@ -29,12 +29,7 @@ yarn-error.log*
 .DS_Store
 desktop.ini
 
-# 用户数据（不要上传）
+# 用户数据
 *.crx
 *.pem
 
-# 可选：开发过程文档（根据需要选择）
-# IMPLEMENTATION_SUMMARY.md
-# PROJECT_COMPLETE.md
-# NEXT_STEPS.md
-# 项目说明.md

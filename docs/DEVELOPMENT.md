@@ -328,6 +328,107 @@ async function example(param1) {
 }
 ```
 
+## 版本发布流程
+
+### 自动发布系统
+
+项目使用 GitHub Actions 实现自动发布，工作流配置文件：`.github/workflows/release.yml`
+
+**触发条件：**
+- 推送到 `main` 分支
+- 修改了 `manifest.json` 文件
+
+**自动化流程：**
+1. 检出代码
+2. 安装 Node.js 20
+3. 从 manifest.json 读取版本号
+4. 安装依赖 (archiver)
+5. 执行打包脚本生成 zip
+6. 验证打包文件
+7. 创建 GitHub Release 并上传
+
+### 发布新版本
+
+**准备工作：**
+```bash
+# 1. 更新版本号（两个文件保持一致）
+vim manifest.json  # 修改 version
+vim package.json   # 修改 version
+
+# 2. 更新 CHANGELOG.md
+vim CHANGELOG.md   # 记录本次变更
+
+# 3. 本地测试打包（可选）
+npm install
+npm run pack
+```
+
+**提交发布：**
+```bash
+git add manifest.json package.json CHANGELOG.md
+git commit -m "chore: bump version to x.x.x"
+git push origin main
+```
+
+**验证发布：**
+1. 访问 GitHub Actions 查看工作流状态
+2. 访问 Releases 页面确认新版本
+3. 下载 zip 文件测试安装
+
+### 本地打包
+
+**跨平台打包脚本：**
+```bash
+npm run pack
+```
+
+该命令会执行 `scripts/pack.js`，使用 archiver 库生成跨平台兼容的 zip 文件。
+
+**打包内容：**
+- manifest.json
+- src/ 目录
+- icons/ 目录
+- dist/ 目录
+- _locales/ 目录
+
+### 版本号管理
+
+**语义化版本：**
+- MAJOR.MINOR.PATCH (例如 1.2.3)
+- MAJOR: 不兼容的重大变更
+- MINOR: 向后兼容的功能新增
+- PATCH: 向后兼容的问题修复
+
+**使用 npm version：**
+```bash
+npm version patch  # 1.1.0 -> 1.1.1
+npm version minor  # 1.1.0 -> 1.2.0
+npm version major  # 1.1.0 -> 2.0.0
+```
+
+注意：使用 npm version 后需要手动同步到 manifest.json
+
+### 故障排查
+
+**工作流未触发：**
+- 确认推送到了 main 分支
+- 确认提交中包含 manifest.json 的修改
+
+**打包失败：**
+```bash
+# 本地测试
+node scripts/get-version.js  # 测试版本提取
+node scripts/pack.js          # 测试打包
+
+# 检查必需目录
+ls -la src/ icons/ dist/ _locales/
+```
+
+**Release 创建失败：**
+- 检查 GitHub Actions 日志
+- 确认 permissions: contents: write 已配置
+- 验证 GITHUB_TOKEN 权限
+
 ## 常见问题
 
 ### Q: 如何调试Content Script？
